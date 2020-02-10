@@ -2,36 +2,47 @@
 <database name="default" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
   <table name="report" idMethod="native" phpName="Report">
     <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
-    <column name="installation_id" phpName="InstallationId" type="VARCHAR" size="100" required="true"/>
-    <column name="report_id" phpName="ReportId" type="VARCHAR" size="64"/>
+    <column name="android_version" phpName="AndroidVersion" type="VARCHAR" size="10"/>
+    <column name="application_log" phpName="ApplicationLog" type="LONGVARCHAR"/>
     <column name="app_version_code" phpName="AppVersionCode" type="VARCHAR" size="10"/>
     <column name="app_version_name" phpName="AppVersionName" type="VARCHAR" size="100"/>
-    <column name="package_name" phpName="PackageName" type="VARCHAR" size="100"/>
-    <column name="file_path" phpName="FilePath" type="VARCHAR" size="100"/>
-    <column name="phone_model" phpName="PhoneModel" type="VARCHAR" size="100"/>
-    <column name="brand" phpName="Brand" type="VARCHAR" size="100"/>
-    <column name="product" phpName="Product" type="VARCHAR" size="100"/>
-    <column name="android_version" phpName="AndroidVersion" type="VARCHAR" size="10"/>
-    <column name="build" phpName="Build" type="LONGVARCHAR"/>
-    <column name="total_mem_size" phpName="TotalMemSize" type="VARCHAR" size="100"/>
     <column name="available_mem_size" phpName="AvailableMemSize" type="VARCHAR" size="100"/>
+    <column name="brand" phpName="Brand" type="VARCHAR" size="100"/>
+    <column name="build" phpName="Build" type="LONGVARCHAR"/>
     <column name="build_config" phpName="BuildConfig" type="LONGVARCHAR"/>
-    <column name="custom_data" phpName="CustomData" type="LONGVARCHAR"/>
-    <column name="is_silent" phpName="IsSilent" type="VARCHAR" size="10"/>
-    <column name="stack_trace" phpName="StackTrace" type="LONGVARCHAR"/>
-    <column name="initial_configuration" phpName="InitialConfiguration" type="LONGVARCHAR"/>
     <column name="crash_configuration" phpName="CrashConfiguration" type="LONGVARCHAR"/>
-    <column name="display" phpName="Display" type="LONGVARCHAR"/>
-    <column name="user_comment" phpName="UserComment" type="VARCHAR" size="256"/>
-    <column name="user_email" phpName="UserEmail" type="VARCHAR" size="100"/>
-    <column name="user_app_start_date" phpName="UserAppStartDate" type="VARCHAR" size="100"/>
-    <column name="user_crash_date" phpName="UserCrashDate" type="VARCHAR" size="100"/>
-    <column name="dumpsys_meminfo" phpName="DumpsysMeminfo" type="LONGVARCHAR"/>
-    <column name="logcat" phpName="Logcat" type="LONGVARCHAR"/>
-    <column name="device_features" phpName="DeviceFeatures" type="LONGVARCHAR"/>
-    <column name="environment" phpName="Environment" type="LONGVARCHAR"/>
-    <column name="shared_preferences" phpName="SharedPreferences" type="LONGVARCHAR"/>
+    <column name="custom_data" phpName="CustomData" type="LONGVARCHAR"/>
     <column name="date_received" phpName="DateReceived" type="TIMESTAMP"/>
+    <column name="device_features" phpName="DeviceFeatures" type="LONGVARCHAR"/>
+    <column name="device_id" phpName="DeviceId" type="VARCHAR" size="100"/>
+    <column name="display" phpName="Display" type="LONGVARCHAR"/>
+    <column name="dropbox" phpName="Dropbox" type="LONGVARCHAR"/>
+    <column name="dumpsys_meminfo" phpName="DumpsysMeminfo" type="LONGVARCHAR"/>
+    <column name="environment" phpName="Environment" type="LONGVARCHAR"/>
+    <column name="eventslog" phpName="Eventslog" type="LONGVARCHAR"/>
+    <column name="file_path" phpName="FilePath" type="VARCHAR" size="100"/>
+    <column name="initial_configuration" phpName="InitialConfiguration" type="LONGVARCHAR"/>
+    <column name="installation_id" phpName="InstallationId" type="VARCHAR" size="100" required="true"/>
+    <column name="is_silent" phpName="IsSilent" type="VARCHAR" size="10"/>
+    <column name="logcat" phpName="Logcat" type="LONGVARCHAR"/>
+    <column name="media_codec_list" phpName="MediaCodecList" type="LONGVARCHAR"/>
+    <column name="package_name" phpName="PackageName" type="VARCHAR" size="100"/>
+    <column name="phone_model" phpName="PhoneModel" type="VARCHAR" size="100"/>
+    <column name="product" phpName="Product" type="VARCHAR" size="100"/>
+    <column name="radiolog" phpName="Radiolog" type="LONGVARCHAR"/>
+    <column name="report_id" phpName="ReportId" type="VARCHAR" size="64"/>
+    <column name="settings_global" phpName="SettingsGlobal" type="LONGVARCHAR"/>
+    <column name="settings_secure" phpName="SettingsSecure" type="LONGVARCHAR"/>
+    <column name="settings_system" phpName="SettingsSystem" type="LONGVARCHAR"/>
+    <column name="shared_preferences" phpName="SharedPreferences" type="LONGVARCHAR"/>
+    <column name="stack_trace" phpName="StackTrace" type="LONGVARCHAR"/>
+    <column name="stack_trace_hash" phpName="StackTraceHash" type="VARCHAR" size="100"/>
+    <column name="thread_details" phpName="ThreadDetails" type="VARCHAR" size="1000"/>
+    <column name="total_mem_size" phpName="TotalMemSize" type="VARCHAR" size="100"/>
+    <column name="user_app_start_date" phpName="UserAppStartDate" type="VARCHAR" size="100"/>
+    <column name="user_comment" phpName="UserComment" type="VARCHAR" size="256"/>
+    <column name="user_crash_date" phpName="UserCrashDate" type="VARCHAR" size="100"/>
+    <column name="user_email" phpName="UserEmail" type="VARCHAR" size="100"/>
     <index name="installation_id">
       <index-column name="installation_id"/>
     </index>

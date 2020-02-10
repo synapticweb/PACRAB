@@ -59,7 +59,7 @@ class ReportTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 31;
+    const NUM_COLUMNS = 42;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class ReportTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 31;
+    const NUM_HYDRATE_COLUMNS = 42;
 
     /**
      * the column name for the id field
@@ -77,14 +77,14 @@ class ReportTableMap extends TableMap
     const COL_ID = 'report.id';
 
     /**
-     * the column name for the installation_id field
+     * the column name for the android_version field
      */
-    const COL_INSTALLATION_ID = 'report.installation_id';
+    const COL_ANDROID_VERSION = 'report.android_version';
 
     /**
-     * the column name for the report_id field
+     * the column name for the application_log field
      */
-    const COL_REPORT_ID = 'report.report_id';
+    const COL_APPLICATION_LOG = 'report.application_log';
 
     /**
      * the column name for the app_version_code field
@@ -97,19 +97,9 @@ class ReportTableMap extends TableMap
     const COL_APP_VERSION_NAME = 'report.app_version_name';
 
     /**
-     * the column name for the package_name field
+     * the column name for the available_mem_size field
      */
-    const COL_PACKAGE_NAME = 'report.package_name';
-
-    /**
-     * the column name for the file_path field
-     */
-    const COL_FILE_PATH = 'report.file_path';
-
-    /**
-     * the column name for the phone_model field
-     */
-    const COL_PHONE_MODEL = 'report.phone_model';
+    const COL_AVAILABLE_MEM_SIZE = 'report.available_mem_size';
 
     /**
      * the column name for the brand field
@@ -117,29 +107,9 @@ class ReportTableMap extends TableMap
     const COL_BRAND = 'report.brand';
 
     /**
-     * the column name for the product field
-     */
-    const COL_PRODUCT = 'report.product';
-
-    /**
-     * the column name for the android_version field
-     */
-    const COL_ANDROID_VERSION = 'report.android_version';
-
-    /**
      * the column name for the build field
      */
     const COL_BUILD = 'report.build';
-
-    /**
-     * the column name for the total_mem_size field
-     */
-    const COL_TOTAL_MEM_SIZE = 'report.total_mem_size';
-
-    /**
-     * the column name for the available_mem_size field
-     */
-    const COL_AVAILABLE_MEM_SIZE = 'report.available_mem_size';
 
     /**
      * the column name for the build_config field
@@ -147,64 +117,19 @@ class ReportTableMap extends TableMap
     const COL_BUILD_CONFIG = 'report.build_config';
 
     /**
-     * the column name for the custom_data field
-     */
-    const COL_CUSTOM_DATA = 'report.custom_data';
-
-    /**
-     * the column name for the is_silent field
-     */
-    const COL_IS_SILENT = 'report.is_silent';
-
-    /**
-     * the column name for the stack_trace field
-     */
-    const COL_STACK_TRACE = 'report.stack_trace';
-
-    /**
-     * the column name for the initial_configuration field
-     */
-    const COL_INITIAL_CONFIGURATION = 'report.initial_configuration';
-
-    /**
      * the column name for the crash_configuration field
      */
     const COL_CRASH_CONFIGURATION = 'report.crash_configuration';
 
     /**
-     * the column name for the display field
+     * the column name for the custom_data field
      */
-    const COL_DISPLAY = 'report.display';
+    const COL_CUSTOM_DATA = 'report.custom_data';
 
     /**
-     * the column name for the user_comment field
+     * the column name for the date_received field
      */
-    const COL_USER_COMMENT = 'report.user_comment';
-
-    /**
-     * the column name for the user_email field
-     */
-    const COL_USER_EMAIL = 'report.user_email';
-
-    /**
-     * the column name for the user_app_start_date field
-     */
-    const COL_USER_APP_START_DATE = 'report.user_app_start_date';
-
-    /**
-     * the column name for the user_crash_date field
-     */
-    const COL_USER_CRASH_DATE = 'report.user_crash_date';
-
-    /**
-     * the column name for the dumpsys_meminfo field
-     */
-    const COL_DUMPSYS_MEMINFO = 'report.dumpsys_meminfo';
-
-    /**
-     * the column name for the logcat field
-     */
-    const COL_LOGCAT = 'report.logcat';
+    const COL_DATE_RECEIVED = 'report.date_received';
 
     /**
      * the column name for the device_features field
@@ -212,9 +137,104 @@ class ReportTableMap extends TableMap
     const COL_DEVICE_FEATURES = 'report.device_features';
 
     /**
+     * the column name for the device_id field
+     */
+    const COL_DEVICE_ID = 'report.device_id';
+
+    /**
+     * the column name for the display field
+     */
+    const COL_DISPLAY = 'report.display';
+
+    /**
+     * the column name for the dropbox field
+     */
+    const COL_DROPBOX = 'report.dropbox';
+
+    /**
+     * the column name for the dumpsys_meminfo field
+     */
+    const COL_DUMPSYS_MEMINFO = 'report.dumpsys_meminfo';
+
+    /**
      * the column name for the environment field
      */
     const COL_ENVIRONMENT = 'report.environment';
+
+    /**
+     * the column name for the eventslog field
+     */
+    const COL_EVENTSLOG = 'report.eventslog';
+
+    /**
+     * the column name for the file_path field
+     */
+    const COL_FILE_PATH = 'report.file_path';
+
+    /**
+     * the column name for the initial_configuration field
+     */
+    const COL_INITIAL_CONFIGURATION = 'report.initial_configuration';
+
+    /**
+     * the column name for the installation_id field
+     */
+    const COL_INSTALLATION_ID = 'report.installation_id';
+
+    /**
+     * the column name for the is_silent field
+     */
+    const COL_IS_SILENT = 'report.is_silent';
+
+    /**
+     * the column name for the logcat field
+     */
+    const COL_LOGCAT = 'report.logcat';
+
+    /**
+     * the column name for the media_codec_list field
+     */
+    const COL_MEDIA_CODEC_LIST = 'report.media_codec_list';
+
+    /**
+     * the column name for the package_name field
+     */
+    const COL_PACKAGE_NAME = 'report.package_name';
+
+    /**
+     * the column name for the phone_model field
+     */
+    const COL_PHONE_MODEL = 'report.phone_model';
+
+    /**
+     * the column name for the product field
+     */
+    const COL_PRODUCT = 'report.product';
+
+    /**
+     * the column name for the radiolog field
+     */
+    const COL_RADIOLOG = 'report.radiolog';
+
+    /**
+     * the column name for the report_id field
+     */
+    const COL_REPORT_ID = 'report.report_id';
+
+    /**
+     * the column name for the settings_global field
+     */
+    const COL_SETTINGS_GLOBAL = 'report.settings_global';
+
+    /**
+     * the column name for the settings_secure field
+     */
+    const COL_SETTINGS_SECURE = 'report.settings_secure';
+
+    /**
+     * the column name for the settings_system field
+     */
+    const COL_SETTINGS_SYSTEM = 'report.settings_system';
 
     /**
      * the column name for the shared_preferences field
@@ -222,9 +242,44 @@ class ReportTableMap extends TableMap
     const COL_SHARED_PREFERENCES = 'report.shared_preferences';
 
     /**
-     * the column name for the date_received field
+     * the column name for the stack_trace field
      */
-    const COL_DATE_RECEIVED = 'report.date_received';
+    const COL_STACK_TRACE = 'report.stack_trace';
+
+    /**
+     * the column name for the stack_trace_hash field
+     */
+    const COL_STACK_TRACE_HASH = 'report.stack_trace_hash';
+
+    /**
+     * the column name for the thread_details field
+     */
+    const COL_THREAD_DETAILS = 'report.thread_details';
+
+    /**
+     * the column name for the total_mem_size field
+     */
+    const COL_TOTAL_MEM_SIZE = 'report.total_mem_size';
+
+    /**
+     * the column name for the user_app_start_date field
+     */
+    const COL_USER_APP_START_DATE = 'report.user_app_start_date';
+
+    /**
+     * the column name for the user_comment field
+     */
+    const COL_USER_COMMENT = 'report.user_comment';
+
+    /**
+     * the column name for the user_crash_date field
+     */
+    const COL_USER_CRASH_DATE = 'report.user_crash_date';
+
+    /**
+     * the column name for the user_email field
+     */
+    const COL_USER_EMAIL = 'report.user_email';
 
     /**
      * The default string format for model objects of the related table
@@ -238,11 +293,11 @@ class ReportTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'InstallationId', 'ReportId', 'AppVersionCode', 'AppVersionName', 'PackageName', 'FilePath', 'PhoneModel', 'Brand', 'Product', 'AndroidVersion', 'Build', 'TotalMemSize', 'AvailableMemSize', 'BuildConfig', 'CustomData', 'IsSilent', 'StackTrace', 'InitialConfiguration', 'CrashConfiguration', 'Display', 'UserComment', 'UserEmail', 'UserAppStartDate', 'UserCrashDate', 'DumpsysMeminfo', 'Logcat', 'DeviceFeatures', 'Environment', 'SharedPreferences', 'DateReceived', ),
-        self::TYPE_CAMELNAME     => array('id', 'installationId', 'reportId', 'appVersionCode', 'appVersionName', 'packageName', 'filePath', 'phoneModel', 'brand', 'product', 'androidVersion', 'build', 'totalMemSize', 'availableMemSize', 'buildConfig', 'customData', 'isSilent', 'stackTrace', 'initialConfiguration', 'crashConfiguration', 'display', 'userComment', 'userEmail', 'userAppStartDate', 'userCrashDate', 'dumpsysMeminfo', 'logcat', 'deviceFeatures', 'environment', 'sharedPreferences', 'dateReceived', ),
-        self::TYPE_COLNAME       => array(ReportTableMap::COL_ID, ReportTableMap::COL_INSTALLATION_ID, ReportTableMap::COL_REPORT_ID, ReportTableMap::COL_APP_VERSION_CODE, ReportTableMap::COL_APP_VERSION_NAME, ReportTableMap::COL_PACKAGE_NAME, ReportTableMap::COL_FILE_PATH, ReportTableMap::COL_PHONE_MODEL, ReportTableMap::COL_BRAND, ReportTableMap::COL_PRODUCT, ReportTableMap::COL_ANDROID_VERSION, ReportTableMap::COL_BUILD, ReportTableMap::COL_TOTAL_MEM_SIZE, ReportTableMap::COL_AVAILABLE_MEM_SIZE, ReportTableMap::COL_BUILD_CONFIG, ReportTableMap::COL_CUSTOM_DATA, ReportTableMap::COL_IS_SILENT, ReportTableMap::COL_STACK_TRACE, ReportTableMap::COL_INITIAL_CONFIGURATION, ReportTableMap::COL_CRASH_CONFIGURATION, ReportTableMap::COL_DISPLAY, ReportTableMap::COL_USER_COMMENT, ReportTableMap::COL_USER_EMAIL, ReportTableMap::COL_USER_APP_START_DATE, ReportTableMap::COL_USER_CRASH_DATE, ReportTableMap::COL_DUMPSYS_MEMINFO, ReportTableMap::COL_LOGCAT, ReportTableMap::COL_DEVICE_FEATURES, ReportTableMap::COL_ENVIRONMENT, ReportTableMap::COL_SHARED_PREFERENCES, ReportTableMap::COL_DATE_RECEIVED, ),
-        self::TYPE_FIELDNAME     => array('id', 'installation_id', 'report_id', 'app_version_code', 'app_version_name', 'package_name', 'file_path', 'phone_model', 'brand', 'product', 'android_version', 'build', 'total_mem_size', 'available_mem_size', 'build_config', 'custom_data', 'is_silent', 'stack_trace', 'initial_configuration', 'crash_configuration', 'display', 'user_comment', 'user_email', 'user_app_start_date', 'user_crash_date', 'dumpsys_meminfo', 'logcat', 'device_features', 'environment', 'shared_preferences', 'date_received', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, )
+        self::TYPE_PHPNAME       => array('Id', 'AndroidVersion', 'ApplicationLog', 'AppVersionCode', 'AppVersionName', 'AvailableMemSize', 'Brand', 'Build', 'BuildConfig', 'CrashConfiguration', 'CustomData', 'DateReceived', 'DeviceFeatures', 'DeviceId', 'Display', 'Dropbox', 'DumpsysMeminfo', 'Environment', 'Eventslog', 'FilePath', 'InitialConfiguration', 'InstallationId', 'IsSilent', 'Logcat', 'MediaCodecList', 'PackageName', 'PhoneModel', 'Product', 'Radiolog', 'ReportId', 'SettingsGlobal', 'SettingsSecure', 'SettingsSystem', 'SharedPreferences', 'StackTrace', 'StackTraceHash', 'ThreadDetails', 'TotalMemSize', 'UserAppStartDate', 'UserComment', 'UserCrashDate', 'UserEmail', ),
+        self::TYPE_CAMELNAME     => array('id', 'androidVersion', 'applicationLog', 'appVersionCode', 'appVersionName', 'availableMemSize', 'brand', 'build', 'buildConfig', 'crashConfiguration', 'customData', 'dateReceived', 'deviceFeatures', 'deviceId', 'display', 'dropbox', 'dumpsysMeminfo', 'environment', 'eventslog', 'filePath', 'initialConfiguration', 'installationId', 'isSilent', 'logcat', 'mediaCodecList', 'packageName', 'phoneModel', 'product', 'radiolog', 'reportId', 'settingsGlobal', 'settingsSecure', 'settingsSystem', 'sharedPreferences', 'stackTrace', 'stackTraceHash', 'threadDetails', 'totalMemSize', 'userAppStartDate', 'userComment', 'userCrashDate', 'userEmail', ),
+        self::TYPE_COLNAME       => array(ReportTableMap::COL_ID, ReportTableMap::COL_ANDROID_VERSION, ReportTableMap::COL_APPLICATION_LOG, ReportTableMap::COL_APP_VERSION_CODE, ReportTableMap::COL_APP_VERSION_NAME, ReportTableMap::COL_AVAILABLE_MEM_SIZE, ReportTableMap::COL_BRAND, ReportTableMap::COL_BUILD, ReportTableMap::COL_BUILD_CONFIG, ReportTableMap::COL_CRASH_CONFIGURATION, ReportTableMap::COL_CUSTOM_DATA, ReportTableMap::COL_DATE_RECEIVED, ReportTableMap::COL_DEVICE_FEATURES, ReportTableMap::COL_DEVICE_ID, ReportTableMap::COL_DISPLAY, ReportTableMap::COL_DROPBOX, ReportTableMap::COL_DUMPSYS_MEMINFO, ReportTableMap::COL_ENVIRONMENT, ReportTableMap::COL_EVENTSLOG, ReportTableMap::COL_FILE_PATH, ReportTableMap::COL_INITIAL_CONFIGURATION, ReportTableMap::COL_INSTALLATION_ID, ReportTableMap::COL_IS_SILENT, ReportTableMap::COL_LOGCAT, ReportTableMap::COL_MEDIA_CODEC_LIST, ReportTableMap::COL_PACKAGE_NAME, ReportTableMap::COL_PHONE_MODEL, ReportTableMap::COL_PRODUCT, ReportTableMap::COL_RADIOLOG, ReportTableMap::COL_REPORT_ID, ReportTableMap::COL_SETTINGS_GLOBAL, ReportTableMap::COL_SETTINGS_SECURE, ReportTableMap::COL_SETTINGS_SYSTEM, ReportTableMap::COL_SHARED_PREFERENCES, ReportTableMap::COL_STACK_TRACE, ReportTableMap::COL_STACK_TRACE_HASH, ReportTableMap::COL_THREAD_DETAILS, ReportTableMap::COL_TOTAL_MEM_SIZE, ReportTableMap::COL_USER_APP_START_DATE, ReportTableMap::COL_USER_COMMENT, ReportTableMap::COL_USER_CRASH_DATE, ReportTableMap::COL_USER_EMAIL, ),
+        self::TYPE_FIELDNAME     => array('id', 'android_version', 'application_log', 'app_version_code', 'app_version_name', 'available_mem_size', 'brand', 'build', 'build_config', 'crash_configuration', 'custom_data', 'date_received', 'device_features', 'device_id', 'display', 'dropbox', 'dumpsys_meminfo', 'environment', 'eventslog', 'file_path', 'initial_configuration', 'installation_id', 'is_silent', 'logcat', 'media_codec_list', 'package_name', 'phone_model', 'product', 'radiolog', 'report_id', 'settings_global', 'settings_secure', 'settings_system', 'shared_preferences', 'stack_trace', 'stack_trace_hash', 'thread_details', 'total_mem_size', 'user_app_start_date', 'user_comment', 'user_crash_date', 'user_email', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, )
     );
 
     /**
@@ -252,11 +307,11 @@ class ReportTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'InstallationId' => 1, 'ReportId' => 2, 'AppVersionCode' => 3, 'AppVersionName' => 4, 'PackageName' => 5, 'FilePath' => 6, 'PhoneModel' => 7, 'Brand' => 8, 'Product' => 9, 'AndroidVersion' => 10, 'Build' => 11, 'TotalMemSize' => 12, 'AvailableMemSize' => 13, 'BuildConfig' => 14, 'CustomData' => 15, 'IsSilent' => 16, 'StackTrace' => 17, 'InitialConfiguration' => 18, 'CrashConfiguration' => 19, 'Display' => 20, 'UserComment' => 21, 'UserEmail' => 22, 'UserAppStartDate' => 23, 'UserCrashDate' => 24, 'DumpsysMeminfo' => 25, 'Logcat' => 26, 'DeviceFeatures' => 27, 'Environment' => 28, 'SharedPreferences' => 29, 'DateReceived' => 30, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'installationId' => 1, 'reportId' => 2, 'appVersionCode' => 3, 'appVersionName' => 4, 'packageName' => 5, 'filePath' => 6, 'phoneModel' => 7, 'brand' => 8, 'product' => 9, 'androidVersion' => 10, 'build' => 11, 'totalMemSize' => 12, 'availableMemSize' => 13, 'buildConfig' => 14, 'customData' => 15, 'isSilent' => 16, 'stackTrace' => 17, 'initialConfiguration' => 18, 'crashConfiguration' => 19, 'display' => 20, 'userComment' => 21, 'userEmail' => 22, 'userAppStartDate' => 23, 'userCrashDate' => 24, 'dumpsysMeminfo' => 25, 'logcat' => 26, 'deviceFeatures' => 27, 'environment' => 28, 'sharedPreferences' => 29, 'dateReceived' => 30, ),
-        self::TYPE_COLNAME       => array(ReportTableMap::COL_ID => 0, ReportTableMap::COL_INSTALLATION_ID => 1, ReportTableMap::COL_REPORT_ID => 2, ReportTableMap::COL_APP_VERSION_CODE => 3, ReportTableMap::COL_APP_VERSION_NAME => 4, ReportTableMap::COL_PACKAGE_NAME => 5, ReportTableMap::COL_FILE_PATH => 6, ReportTableMap::COL_PHONE_MODEL => 7, ReportTableMap::COL_BRAND => 8, ReportTableMap::COL_PRODUCT => 9, ReportTableMap::COL_ANDROID_VERSION => 10, ReportTableMap::COL_BUILD => 11, ReportTableMap::COL_TOTAL_MEM_SIZE => 12, ReportTableMap::COL_AVAILABLE_MEM_SIZE => 13, ReportTableMap::COL_BUILD_CONFIG => 14, ReportTableMap::COL_CUSTOM_DATA => 15, ReportTableMap::COL_IS_SILENT => 16, ReportTableMap::COL_STACK_TRACE => 17, ReportTableMap::COL_INITIAL_CONFIGURATION => 18, ReportTableMap::COL_CRASH_CONFIGURATION => 19, ReportTableMap::COL_DISPLAY => 20, ReportTableMap::COL_USER_COMMENT => 21, ReportTableMap::COL_USER_EMAIL => 22, ReportTableMap::COL_USER_APP_START_DATE => 23, ReportTableMap::COL_USER_CRASH_DATE => 24, ReportTableMap::COL_DUMPSYS_MEMINFO => 25, ReportTableMap::COL_LOGCAT => 26, ReportTableMap::COL_DEVICE_FEATURES => 27, ReportTableMap::COL_ENVIRONMENT => 28, ReportTableMap::COL_SHARED_PREFERENCES => 29, ReportTableMap::COL_DATE_RECEIVED => 30, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'installation_id' => 1, 'report_id' => 2, 'app_version_code' => 3, 'app_version_name' => 4, 'package_name' => 5, 'file_path' => 6, 'phone_model' => 7, 'brand' => 8, 'product' => 9, 'android_version' => 10, 'build' => 11, 'total_mem_size' => 12, 'available_mem_size' => 13, 'build_config' => 14, 'custom_data' => 15, 'is_silent' => 16, 'stack_trace' => 17, 'initial_configuration' => 18, 'crash_configuration' => 19, 'display' => 20, 'user_comment' => 21, 'user_email' => 22, 'user_app_start_date' => 23, 'user_crash_date' => 24, 'dumpsys_meminfo' => 25, 'logcat' => 26, 'device_features' => 27, 'environment' => 28, 'shared_preferences' => 29, 'date_received' => 30, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'AndroidVersion' => 1, 'ApplicationLog' => 2, 'AppVersionCode' => 3, 'AppVersionName' => 4, 'AvailableMemSize' => 5, 'Brand' => 6, 'Build' => 7, 'BuildConfig' => 8, 'CrashConfiguration' => 9, 'CustomData' => 10, 'DateReceived' => 11, 'DeviceFeatures' => 12, 'DeviceId' => 13, 'Display' => 14, 'Dropbox' => 15, 'DumpsysMeminfo' => 16, 'Environment' => 17, 'Eventslog' => 18, 'FilePath' => 19, 'InitialConfiguration' => 20, 'InstallationId' => 21, 'IsSilent' => 22, 'Logcat' => 23, 'MediaCodecList' => 24, 'PackageName' => 25, 'PhoneModel' => 26, 'Product' => 27, 'Radiolog' => 28, 'ReportId' => 29, 'SettingsGlobal' => 30, 'SettingsSecure' => 31, 'SettingsSystem' => 32, 'SharedPreferences' => 33, 'StackTrace' => 34, 'StackTraceHash' => 35, 'ThreadDetails' => 36, 'TotalMemSize' => 37, 'UserAppStartDate' => 38, 'UserComment' => 39, 'UserCrashDate' => 40, 'UserEmail' => 41, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'androidVersion' => 1, 'applicationLog' => 2, 'appVersionCode' => 3, 'appVersionName' => 4, 'availableMemSize' => 5, 'brand' => 6, 'build' => 7, 'buildConfig' => 8, 'crashConfiguration' => 9, 'customData' => 10, 'dateReceived' => 11, 'deviceFeatures' => 12, 'deviceId' => 13, 'display' => 14, 'dropbox' => 15, 'dumpsysMeminfo' => 16, 'environment' => 17, 'eventslog' => 18, 'filePath' => 19, 'initialConfiguration' => 20, 'installationId' => 21, 'isSilent' => 22, 'logcat' => 23, 'mediaCodecList' => 24, 'packageName' => 25, 'phoneModel' => 26, 'product' => 27, 'radiolog' => 28, 'reportId' => 29, 'settingsGlobal' => 30, 'settingsSecure' => 31, 'settingsSystem' => 32, 'sharedPreferences' => 33, 'stackTrace' => 34, 'stackTraceHash' => 35, 'threadDetails' => 36, 'totalMemSize' => 37, 'userAppStartDate' => 38, 'userComment' => 39, 'userCrashDate' => 40, 'userEmail' => 41, ),
+        self::TYPE_COLNAME       => array(ReportTableMap::COL_ID => 0, ReportTableMap::COL_ANDROID_VERSION => 1, ReportTableMap::COL_APPLICATION_LOG => 2, ReportTableMap::COL_APP_VERSION_CODE => 3, ReportTableMap::COL_APP_VERSION_NAME => 4, ReportTableMap::COL_AVAILABLE_MEM_SIZE => 5, ReportTableMap::COL_BRAND => 6, ReportTableMap::COL_BUILD => 7, ReportTableMap::COL_BUILD_CONFIG => 8, ReportTableMap::COL_CRASH_CONFIGURATION => 9, ReportTableMap::COL_CUSTOM_DATA => 10, ReportTableMap::COL_DATE_RECEIVED => 11, ReportTableMap::COL_DEVICE_FEATURES => 12, ReportTableMap::COL_DEVICE_ID => 13, ReportTableMap::COL_DISPLAY => 14, ReportTableMap::COL_DROPBOX => 15, ReportTableMap::COL_DUMPSYS_MEMINFO => 16, ReportTableMap::COL_ENVIRONMENT => 17, ReportTableMap::COL_EVENTSLOG => 18, ReportTableMap::COL_FILE_PATH => 19, ReportTableMap::COL_INITIAL_CONFIGURATION => 20, ReportTableMap::COL_INSTALLATION_ID => 21, ReportTableMap::COL_IS_SILENT => 22, ReportTableMap::COL_LOGCAT => 23, ReportTableMap::COL_MEDIA_CODEC_LIST => 24, ReportTableMap::COL_PACKAGE_NAME => 25, ReportTableMap::COL_PHONE_MODEL => 26, ReportTableMap::COL_PRODUCT => 27, ReportTableMap::COL_RADIOLOG => 28, ReportTableMap::COL_REPORT_ID => 29, ReportTableMap::COL_SETTINGS_GLOBAL => 30, ReportTableMap::COL_SETTINGS_SECURE => 31, ReportTableMap::COL_SETTINGS_SYSTEM => 32, ReportTableMap::COL_SHARED_PREFERENCES => 33, ReportTableMap::COL_STACK_TRACE => 34, ReportTableMap::COL_STACK_TRACE_HASH => 35, ReportTableMap::COL_THREAD_DETAILS => 36, ReportTableMap::COL_TOTAL_MEM_SIZE => 37, ReportTableMap::COL_USER_APP_START_DATE => 38, ReportTableMap::COL_USER_COMMENT => 39, ReportTableMap::COL_USER_CRASH_DATE => 40, ReportTableMap::COL_USER_EMAIL => 41, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'android_version' => 1, 'application_log' => 2, 'app_version_code' => 3, 'app_version_name' => 4, 'available_mem_size' => 5, 'brand' => 6, 'build' => 7, 'build_config' => 8, 'crash_configuration' => 9, 'custom_data' => 10, 'date_received' => 11, 'device_features' => 12, 'device_id' => 13, 'display' => 14, 'dropbox' => 15, 'dumpsys_meminfo' => 16, 'environment' => 17, 'eventslog' => 18, 'file_path' => 19, 'initial_configuration' => 20, 'installation_id' => 21, 'is_silent' => 22, 'logcat' => 23, 'media_codec_list' => 24, 'package_name' => 25, 'phone_model' => 26, 'product' => 27, 'radiolog' => 28, 'report_id' => 29, 'settings_global' => 30, 'settings_secure' => 31, 'settings_system' => 32, 'shared_preferences' => 33, 'stack_trace' => 34, 'stack_trace_hash' => 35, 'thread_details' => 36, 'total_mem_size' => 37, 'user_app_start_date' => 38, 'user_comment' => 39, 'user_crash_date' => 40, 'user_email' => 41, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, )
     );
 
     /**
@@ -277,36 +332,47 @@ class ReportTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('installation_id', 'InstallationId', 'VARCHAR', true, 100, null);
-        $this->addColumn('report_id', 'ReportId', 'VARCHAR', false, 64, null);
+        $this->addColumn('android_version', 'AndroidVersion', 'VARCHAR', false, 10, null);
+        $this->addColumn('application_log', 'ApplicationLog', 'LONGVARCHAR', false, null, null);
         $this->addColumn('app_version_code', 'AppVersionCode', 'VARCHAR', false, 10, null);
         $this->addColumn('app_version_name', 'AppVersionName', 'VARCHAR', false, 100, null);
-        $this->addColumn('package_name', 'PackageName', 'VARCHAR', false, 100, null);
-        $this->addColumn('file_path', 'FilePath', 'VARCHAR', false, 100, null);
-        $this->addColumn('phone_model', 'PhoneModel', 'VARCHAR', false, 100, null);
-        $this->addColumn('brand', 'Brand', 'VARCHAR', false, 100, null);
-        $this->addColumn('product', 'Product', 'VARCHAR', false, 100, null);
-        $this->addColumn('android_version', 'AndroidVersion', 'VARCHAR', false, 10, null);
-        $this->addColumn('build', 'Build', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('total_mem_size', 'TotalMemSize', 'VARCHAR', false, 100, null);
         $this->addColumn('available_mem_size', 'AvailableMemSize', 'VARCHAR', false, 100, null);
+        $this->addColumn('brand', 'Brand', 'VARCHAR', false, 100, null);
+        $this->addColumn('build', 'Build', 'LONGVARCHAR', false, null, null);
         $this->addColumn('build_config', 'BuildConfig', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('custom_data', 'CustomData', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('is_silent', 'IsSilent', 'VARCHAR', false, 10, null);
-        $this->addColumn('stack_trace', 'StackTrace', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('initial_configuration', 'InitialConfiguration', 'LONGVARCHAR', false, null, null);
         $this->addColumn('crash_configuration', 'CrashConfiguration', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('display', 'Display', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('user_comment', 'UserComment', 'VARCHAR', false, 256, null);
-        $this->addColumn('user_email', 'UserEmail', 'VARCHAR', false, 100, null);
-        $this->addColumn('user_app_start_date', 'UserAppStartDate', 'VARCHAR', false, 100, null);
-        $this->addColumn('user_crash_date', 'UserCrashDate', 'VARCHAR', false, 100, null);
-        $this->addColumn('dumpsys_meminfo', 'DumpsysMeminfo', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('logcat', 'Logcat', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('device_features', 'DeviceFeatures', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('environment', 'Environment', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('shared_preferences', 'SharedPreferences', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('custom_data', 'CustomData', 'LONGVARCHAR', false, null, null);
         $this->addColumn('date_received', 'DateReceived', 'TIMESTAMP', false, null, null);
+        $this->addColumn('device_features', 'DeviceFeatures', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('device_id', 'DeviceId', 'VARCHAR', false, 100, null);
+        $this->addColumn('display', 'Display', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('dropbox', 'Dropbox', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('dumpsys_meminfo', 'DumpsysMeminfo', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('environment', 'Environment', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('eventslog', 'Eventslog', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('file_path', 'FilePath', 'VARCHAR', false, 100, null);
+        $this->addColumn('initial_configuration', 'InitialConfiguration', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('installation_id', 'InstallationId', 'VARCHAR', true, 100, null);
+        $this->addColumn('is_silent', 'IsSilent', 'VARCHAR', false, 10, null);
+        $this->addColumn('logcat', 'Logcat', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('media_codec_list', 'MediaCodecList', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('package_name', 'PackageName', 'VARCHAR', false, 100, null);
+        $this->addColumn('phone_model', 'PhoneModel', 'VARCHAR', false, 100, null);
+        $this->addColumn('product', 'Product', 'VARCHAR', false, 100, null);
+        $this->addColumn('radiolog', 'Radiolog', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('report_id', 'ReportId', 'VARCHAR', false, 64, null);
+        $this->addColumn('settings_global', 'SettingsGlobal', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('settings_secure', 'SettingsSecure', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('settings_system', 'SettingsSystem', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('shared_preferences', 'SharedPreferences', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('stack_trace', 'StackTrace', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('stack_trace_hash', 'StackTraceHash', 'VARCHAR', false, 100, null);
+        $this->addColumn('thread_details', 'ThreadDetails', 'VARCHAR', false, 1000, null);
+        $this->addColumn('total_mem_size', 'TotalMemSize', 'VARCHAR', false, 100, null);
+        $this->addColumn('user_app_start_date', 'UserAppStartDate', 'VARCHAR', false, 100, null);
+        $this->addColumn('user_comment', 'UserComment', 'VARCHAR', false, 256, null);
+        $this->addColumn('user_crash_date', 'UserCrashDate', 'VARCHAR', false, 100, null);
+        $this->addColumn('user_email', 'UserEmail', 'VARCHAR', false, 100, null);
     } // initialize()
 
     /**
@@ -458,68 +524,90 @@ class ReportTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(ReportTableMap::COL_ID);
-            $criteria->addSelectColumn(ReportTableMap::COL_INSTALLATION_ID);
-            $criteria->addSelectColumn(ReportTableMap::COL_REPORT_ID);
+            $criteria->addSelectColumn(ReportTableMap::COL_ANDROID_VERSION);
+            $criteria->addSelectColumn(ReportTableMap::COL_APPLICATION_LOG);
             $criteria->addSelectColumn(ReportTableMap::COL_APP_VERSION_CODE);
             $criteria->addSelectColumn(ReportTableMap::COL_APP_VERSION_NAME);
-            $criteria->addSelectColumn(ReportTableMap::COL_PACKAGE_NAME);
-            $criteria->addSelectColumn(ReportTableMap::COL_FILE_PATH);
-            $criteria->addSelectColumn(ReportTableMap::COL_PHONE_MODEL);
-            $criteria->addSelectColumn(ReportTableMap::COL_BRAND);
-            $criteria->addSelectColumn(ReportTableMap::COL_PRODUCT);
-            $criteria->addSelectColumn(ReportTableMap::COL_ANDROID_VERSION);
-            $criteria->addSelectColumn(ReportTableMap::COL_BUILD);
-            $criteria->addSelectColumn(ReportTableMap::COL_TOTAL_MEM_SIZE);
             $criteria->addSelectColumn(ReportTableMap::COL_AVAILABLE_MEM_SIZE);
+            $criteria->addSelectColumn(ReportTableMap::COL_BRAND);
+            $criteria->addSelectColumn(ReportTableMap::COL_BUILD);
             $criteria->addSelectColumn(ReportTableMap::COL_BUILD_CONFIG);
-            $criteria->addSelectColumn(ReportTableMap::COL_CUSTOM_DATA);
-            $criteria->addSelectColumn(ReportTableMap::COL_IS_SILENT);
-            $criteria->addSelectColumn(ReportTableMap::COL_STACK_TRACE);
-            $criteria->addSelectColumn(ReportTableMap::COL_INITIAL_CONFIGURATION);
             $criteria->addSelectColumn(ReportTableMap::COL_CRASH_CONFIGURATION);
-            $criteria->addSelectColumn(ReportTableMap::COL_DISPLAY);
-            $criteria->addSelectColumn(ReportTableMap::COL_USER_COMMENT);
-            $criteria->addSelectColumn(ReportTableMap::COL_USER_EMAIL);
-            $criteria->addSelectColumn(ReportTableMap::COL_USER_APP_START_DATE);
-            $criteria->addSelectColumn(ReportTableMap::COL_USER_CRASH_DATE);
-            $criteria->addSelectColumn(ReportTableMap::COL_DUMPSYS_MEMINFO);
-            $criteria->addSelectColumn(ReportTableMap::COL_LOGCAT);
-            $criteria->addSelectColumn(ReportTableMap::COL_DEVICE_FEATURES);
-            $criteria->addSelectColumn(ReportTableMap::COL_ENVIRONMENT);
-            $criteria->addSelectColumn(ReportTableMap::COL_SHARED_PREFERENCES);
+            $criteria->addSelectColumn(ReportTableMap::COL_CUSTOM_DATA);
             $criteria->addSelectColumn(ReportTableMap::COL_DATE_RECEIVED);
+            $criteria->addSelectColumn(ReportTableMap::COL_DEVICE_FEATURES);
+            $criteria->addSelectColumn(ReportTableMap::COL_DEVICE_ID);
+            $criteria->addSelectColumn(ReportTableMap::COL_DISPLAY);
+            $criteria->addSelectColumn(ReportTableMap::COL_DROPBOX);
+            $criteria->addSelectColumn(ReportTableMap::COL_DUMPSYS_MEMINFO);
+            $criteria->addSelectColumn(ReportTableMap::COL_ENVIRONMENT);
+            $criteria->addSelectColumn(ReportTableMap::COL_EVENTSLOG);
+            $criteria->addSelectColumn(ReportTableMap::COL_FILE_PATH);
+            $criteria->addSelectColumn(ReportTableMap::COL_INITIAL_CONFIGURATION);
+            $criteria->addSelectColumn(ReportTableMap::COL_INSTALLATION_ID);
+            $criteria->addSelectColumn(ReportTableMap::COL_IS_SILENT);
+            $criteria->addSelectColumn(ReportTableMap::COL_LOGCAT);
+            $criteria->addSelectColumn(ReportTableMap::COL_MEDIA_CODEC_LIST);
+            $criteria->addSelectColumn(ReportTableMap::COL_PACKAGE_NAME);
+            $criteria->addSelectColumn(ReportTableMap::COL_PHONE_MODEL);
+            $criteria->addSelectColumn(ReportTableMap::COL_PRODUCT);
+            $criteria->addSelectColumn(ReportTableMap::COL_RADIOLOG);
+            $criteria->addSelectColumn(ReportTableMap::COL_REPORT_ID);
+            $criteria->addSelectColumn(ReportTableMap::COL_SETTINGS_GLOBAL);
+            $criteria->addSelectColumn(ReportTableMap::COL_SETTINGS_SECURE);
+            $criteria->addSelectColumn(ReportTableMap::COL_SETTINGS_SYSTEM);
+            $criteria->addSelectColumn(ReportTableMap::COL_SHARED_PREFERENCES);
+            $criteria->addSelectColumn(ReportTableMap::COL_STACK_TRACE);
+            $criteria->addSelectColumn(ReportTableMap::COL_STACK_TRACE_HASH);
+            $criteria->addSelectColumn(ReportTableMap::COL_THREAD_DETAILS);
+            $criteria->addSelectColumn(ReportTableMap::COL_TOTAL_MEM_SIZE);
+            $criteria->addSelectColumn(ReportTableMap::COL_USER_APP_START_DATE);
+            $criteria->addSelectColumn(ReportTableMap::COL_USER_COMMENT);
+            $criteria->addSelectColumn(ReportTableMap::COL_USER_CRASH_DATE);
+            $criteria->addSelectColumn(ReportTableMap::COL_USER_EMAIL);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.installation_id');
-            $criteria->addSelectColumn($alias . '.report_id');
+            $criteria->addSelectColumn($alias . '.android_version');
+            $criteria->addSelectColumn($alias . '.application_log');
             $criteria->addSelectColumn($alias . '.app_version_code');
             $criteria->addSelectColumn($alias . '.app_version_name');
-            $criteria->addSelectColumn($alias . '.package_name');
-            $criteria->addSelectColumn($alias . '.file_path');
-            $criteria->addSelectColumn($alias . '.phone_model');
-            $criteria->addSelectColumn($alias . '.brand');
-            $criteria->addSelectColumn($alias . '.product');
-            $criteria->addSelectColumn($alias . '.android_version');
-            $criteria->addSelectColumn($alias . '.build');
-            $criteria->addSelectColumn($alias . '.total_mem_size');
             $criteria->addSelectColumn($alias . '.available_mem_size');
+            $criteria->addSelectColumn($alias . '.brand');
+            $criteria->addSelectColumn($alias . '.build');
             $criteria->addSelectColumn($alias . '.build_config');
-            $criteria->addSelectColumn($alias . '.custom_data');
-            $criteria->addSelectColumn($alias . '.is_silent');
-            $criteria->addSelectColumn($alias . '.stack_trace');
-            $criteria->addSelectColumn($alias . '.initial_configuration');
             $criteria->addSelectColumn($alias . '.crash_configuration');
-            $criteria->addSelectColumn($alias . '.display');
-            $criteria->addSelectColumn($alias . '.user_comment');
-            $criteria->addSelectColumn($alias . '.user_email');
-            $criteria->addSelectColumn($alias . '.user_app_start_date');
-            $criteria->addSelectColumn($alias . '.user_crash_date');
-            $criteria->addSelectColumn($alias . '.dumpsys_meminfo');
-            $criteria->addSelectColumn($alias . '.logcat');
-            $criteria->addSelectColumn($alias . '.device_features');
-            $criteria->addSelectColumn($alias . '.environment');
-            $criteria->addSelectColumn($alias . '.shared_preferences');
+            $criteria->addSelectColumn($alias . '.custom_data');
             $criteria->addSelectColumn($alias . '.date_received');
+            $criteria->addSelectColumn($alias . '.device_features');
+            $criteria->addSelectColumn($alias . '.device_id');
+            $criteria->addSelectColumn($alias . '.display');
+            $criteria->addSelectColumn($alias . '.dropbox');
+            $criteria->addSelectColumn($alias . '.dumpsys_meminfo');
+            $criteria->addSelectColumn($alias . '.environment');
+            $criteria->addSelectColumn($alias . '.eventslog');
+            $criteria->addSelectColumn($alias . '.file_path');
+            $criteria->addSelectColumn($alias . '.initial_configuration');
+            $criteria->addSelectColumn($alias . '.installation_id');
+            $criteria->addSelectColumn($alias . '.is_silent');
+            $criteria->addSelectColumn($alias . '.logcat');
+            $criteria->addSelectColumn($alias . '.media_codec_list');
+            $criteria->addSelectColumn($alias . '.package_name');
+            $criteria->addSelectColumn($alias . '.phone_model');
+            $criteria->addSelectColumn($alias . '.product');
+            $criteria->addSelectColumn($alias . '.radiolog');
+            $criteria->addSelectColumn($alias . '.report_id');
+            $criteria->addSelectColumn($alias . '.settings_global');
+            $criteria->addSelectColumn($alias . '.settings_secure');
+            $criteria->addSelectColumn($alias . '.settings_system');
+            $criteria->addSelectColumn($alias . '.shared_preferences');
+            $criteria->addSelectColumn($alias . '.stack_trace');
+            $criteria->addSelectColumn($alias . '.stack_trace_hash');
+            $criteria->addSelectColumn($alias . '.thread_details');
+            $criteria->addSelectColumn($alias . '.total_mem_size');
+            $criteria->addSelectColumn($alias . '.user_app_start_date');
+            $criteria->addSelectColumn($alias . '.user_comment');
+            $criteria->addSelectColumn($alias . '.user_crash_date');
+            $criteria->addSelectColumn($alias . '.user_email');
         }
     }
 
