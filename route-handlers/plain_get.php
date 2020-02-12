@@ -65,29 +65,33 @@ class DeviceInfo {
 }
 
 function plain_get() {
-	$dates = ReportQuery::create()->select('date_received')->orderByDateReceived()->find()->getData();
-	$days = array();
+	$dates = ReportQuery::create()->select('date_received')->orderByDateReceived('desc')->find()->getData();
 
 	//The next code attempts to create day intervals on the basis of the receiving dates of the reports. These dates are stored in the db in the field date_received. The intervals are returned in the array days[][] as arrays with 2 elements: the start date and the end date of the interval.
+	$days = array();
+	$date_start = null;
+
 	for($i = 0; $i < count($dates); ++$i) {
-		$start_of_day = DateTime::createFromFormat('Y-m-d H:i:s', substr($dates[$i], 0, 10) . '00:00:00');
-		$interval = new DateInterval('PT1S'); //1 second interval; purely formal.
-
-		while($interval->d == 0 && $i < count($dates) - 1) {
-			++$i;	
-			$date_next = DateTime::createFromFormat('Y-m-d H:i:s', $dates[$i]);
-			$interval = $start_of_day->diff($date_next);	
+		$date_current = DateTime::createFromFormat('Y-m-d H:i:s', $dates[$i]);
+		if($date_start == null)
+			$date_start = $date_current;
+		$interval = $date_start->diff($date_current);
+		
+		if($interval->d > 0) {
+			$day = new Day();
+			$day->setEndDate($date_start->format('Y-m-d H:i:s')); //because the dates are in reverse chronological order
+			$day->setStartDate($dates[$i - 1]);
+			$days[] = $day;	
+			$date_start = $date_current;
 		}
-
-		$end_of_day = new DateTime($start_of_day->format('Y-m-d H:i:s'));
-		$end_of_day->add(new DateInterval('PT86399S'));
-		$day = new Day();
-		$day->setStartDate($start_of_day->format('Y-m-d H:i:s'));
-		$day->setEndDate($end_of_day->format('Y-m-d H:i:s'));
-		$days[] = $day;
+		
+		if($i == count($dates) - 1) { //If we reached the oldest report date, this is the last iteration, so the previously computed $date_start doesn't matter anymore. This is why we have to set here the last interval.
+			$day = new Day();
+			$day->setEndDate($date_start->format('Y-m-d H:i:s'));
+			$day->setStartDate($dates[$i]);
+			$days[] = $day;	
+		} 
 	}
-
-	$days = array_reverse($days);
 
 	//next, we figure what devices crashed in every day interval we got in the preceding step. The found devices are stored in a third element of ...
 	for ($i = 0; $i < count($days); ++$i) {
