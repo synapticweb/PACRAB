@@ -1,10 +1,16 @@
 <?php
 
+/**
+* This class encapsulates information about a day interval.
+*/
 class Day {
+	/** @var string The beginning date (Y-m-d H:i:s) of the interval*/
 	private $start_date;
 
+	/** @var string The end date (Y-m-d H:i:s) of the interval*/
 	private $end_date;
 
+	/** @var DeviceInfo[] An array of DeviceInfo objects that contains information about the devices that produced reports on that specific day.*/
 	private $devices_info;
 
 	public function setStartDate($start_date) {
@@ -32,11 +38,17 @@ class Day {
 	}	
 }
 
+/**
+* This class encapsulates information about a specific device that produced a report.
+*/
 class DeviceInfo {
+	/** @var string The installation unique ID of the app, as reported by ACRA. */
 	private $installation_id;
 
+	/** @var string An identifier string computed by PACRAB for every installation id. It is composed by the btand of the device, the phone model, the product name and the Android version, all separated by dashes.*/
 	private $identifier_string;
 
+	/** @var int The number of reports produced by this device on a specific day. */
 	private $num_reports;
 
 	public function setInstallationId($installation_id) {
@@ -67,7 +79,7 @@ class DeviceInfo {
 function plain_get() {
 	$dates = ReportQuery::create()->select('date_received')->orderByDateReceived('desc')->find()->getData();
 
-	//The next code attempts to create day intervals on the basis of the receiving dates of the reports. These dates are stored in the db in the field date_received. The intervals are returned in the array days[][] as arrays with 2 elements: the start date and the end date of the interval.
+	//The next code attempts to create day intervals on the basis of the receiving dates of the reports. These dates are stored in the db in the field date_received. The intervals are returned as an array of Day objects.
 	$days = array();
 	$date_start = null;
 
