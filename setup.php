@@ -1,5 +1,8 @@
 <?php
 
+//load configuration
+require_once 'config.php';
+
 // setup the autoloading
 require_once 'vendor/autoload.php';
 

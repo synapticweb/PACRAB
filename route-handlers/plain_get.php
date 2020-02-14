@@ -76,14 +76,39 @@ class DeviceInfo {
 	}
 }
 
-function plain_get() {
+function plain_get($offset = 0) {
 	$dates = ReportQuery::create()->select('date_received')->orderByDateReceived('desc')->find()->getData();
 
 	//The next code attempts to create day intervals on the basis of the receiving dates of the reports. These dates are stored in the db in the field date_received. The intervals are returned as an array of Day objects.
 	$days = array();
 	$date_start = null;
+	$prev_offset = -1; $next_offset;
+	$day_count = 0;
 
-	for($i = 0; $i < count($dates); ++$i) {
+	for($i = $offset; $i >= 0; --$i) {
+		$date_current = DateTime::createFromFormat('Y-m-d H:i:s', $dates[$i]);
+		if($date_start == null)
+			$date_start = $date_current;
+		$interval = $date_start->diff($date_current);
+
+		if($interval->d > 0) {
+			$day_count++;
+			$date_start = $date_current;
+		}
+
+//Prima idee a fost ca condiția să fie $day_count == DAYS_PER_PAGE. Problema este că în momentul în care $day_count devine DAYS_PER_PAGE mai este încă o ZI de decrementat pînă se ajunge la începutul paginii!
+		if($day_count > DAYS_PER_PAGE) {
+			$prev_offset = $i + 1; // Cînd $days_count devine > DAYS_PER_PAGE deja s-a intrat cu un record în pagina precedentă. Este deci necesar să corectăm.
+			break;
+		}
+//Sistemul de mai sus nu funcționează la prima pagină deoarece $day_count nu ajunge niciodată mai mare decît DAYS_PER_PAGE. Este deci nevoie de o condiție specială.
+		if($i == 0 && $day_count > 0) //$day_count > 0 e necesar pentru ca $prev_offset să nu fie setat la accesarea primei pagini.
+			$prev_offset = 0;
+	}
+
+	$date_start = null;
+
+	for($i = $offset; $i < count($dates); ++$i) {
 		$date_current = DateTime::createFromFormat('Y-m-d H:i:s', $dates[$i]);
 		if($date_start == null)
 			$date_start = $date_current;
@@ -93,7 +118,12 @@ function plain_get() {
 			$day = new Day();
 			$day->setEndDate($date_start->format('Y-m-d H:i:s')); //because the dates are in reverse chronological order
 			$day->setStartDate($dates[$i - 1]);
+			print print_r($day, true) . "<br>";
 			$days[] = $day;	
+			// if(count($days) == DAYS_PER_PAGE) {
+			// 	$next_offset = $i;
+			// 	break;
+			// }
 			$date_start = $date_current;
 		}
 		
@@ -101,7 +131,10 @@ function plain_get() {
 			$day = new Day();
 			$day->setEndDate($date_start->format('Y-m-d H:i:s'));
 			$day->setStartDate($dates[$i]);
-			$days[] = $day;	
+			print print_r($day, true) . "<br>";
+
+			$days[] = $day;
+			$next_offset = -1;	
 		} 
 	}
 
@@ -134,5 +167,5 @@ function plain_get() {
 		$days[$i]->setDevicesInfo($devices_info);
 	}
 	
-	Flight::render('plain_get', array('days' => $days));
+	// Flight::render('plain_get', array('days' => $days, 'prev_offset' => $prev_offset, 'next_offset' => $next_offset));
 }

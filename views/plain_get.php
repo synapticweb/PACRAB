@@ -22,5 +22,17 @@
 				<?php endforeach ?>
 		</div>
 	<?php endforeach ?>
+
+<div id="footer">
+<?php if($prev_offset != -1): ?>
+	<a href="/offset=<?php echo $prev_offset?>">Previous</a>
+	<a href="/">Home</a>
+<?php endif ?>
+<?php if($next_offset != -1): ?>
+	<a href="/offset=<?php echo $next_offset ?>">Next</a>
+<?php endif ?>
+</div>
+</div>
+
 </body>
 </html>
