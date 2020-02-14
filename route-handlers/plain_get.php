@@ -85,45 +85,48 @@ function plain_get($offset = 0) {
 	$prev_offset = -1; $next_offset;
 	$day_count = 0;
 
+	//We cannot implement a classical pagination system because we don't know how many pages are. So the pagination is limited to next and previous page navigation. The offsets in the $dates array must be calculated for both directions. We start with 'previous':
 	for($i = $offset; $i >= 0; --$i) {
-		$date_current = DateTime::createFromFormat('Y-m-d H:i:s', $dates[$i]);
+		$date_current = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $dates[$i]);
 		if($date_start == null)
 			$date_start = $date_current;
-		$interval = $date_start->diff($date_current);
+		$interval = $date_start->setTime(0,0,0)->diff($date_current->setTime(0,0,0));
 
-		if($interval->d > 0) {
+		if($interval->days > 0) {
 			$day_count++;
 			$date_start = $date_current;
 		}
 
-//Prima idee a fost ca condiția să fie $day_count == DAYS_PER_PAGE. Problema este că în momentul în care $day_count devine DAYS_PER_PAGE mai este încă o ZI de decrementat pînă se ajunge la începutul paginii!
+	//The first idea was to use $day_count == DAYS_PER_PAGE as comparison condition. The problem is that when $day_count becomes DAYS_PER_PAGE there remains one whole day to decrement until the beginning of the page!
 		if($day_count > DAYS_PER_PAGE) {
-			$prev_offset = $i + 1; // Cînd $days_count devine > DAYS_PER_PAGE deja s-a intrat cu un record în pagina precedentă. Este deci necesar să corectăm.
+			$prev_offset = $i + 1; // when $days_count becomes > DAYS_PER_PAGE we are already one record off in the preceding page. It is therefore necessary to make adjustemnt.
 			break;
 		}
-//Sistemul de mai sus nu funcționează la prima pagină deoarece $day_count nu ajunge niciodată mai mare decît DAYS_PER_PAGE. Este deci nevoie de o condiție specială.
-		if($i == 0 && $day_count > 0) //$day_count > 0 e necesar pentru ca $prev_offset să nu fie setat la accesarea primei pagini.
+	//The above system doesn't work on the first page because $day_count never becomes greater than DAYS_PER_PAGE. Therefore, we need a special condition.
+		if($i == 0 && $day_count > 0) //$day_count > 0 is necessary in order to prevent setting $prev_offset when accessing the first page.
 			$prev_offset = 0;
 	}
 
 	$date_start = null;
 
+	//Now we calculate the offset for 'next' and the days objects for the current page:
 	for($i = $offset; $i < count($dates); ++$i) {
-		$date_current = DateTime::createFromFormat('Y-m-d H:i:s', $dates[$i]);
+		$date_current = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $dates[$i]); //I use DateTimeImmutable because when calling setTime below I want to create a new object instead of modifying itself.
 		if($date_start == null)
 			$date_start = $date_current;
-		$interval = $date_start->diff($date_current);
+		//Setting time part to 0 is necessary when comparing date objects that are in different days, but the difference between them is less than 24 hours. Before using this trick these dates were not compared correctly (see commit 21a0f71f1028f484f9). https://stackoverflow.com/questions/18102603/get-a-php-datetime-difference-in-days-considering-midnight-as-a-day-change.
+		//Also, it is vital to use DateTime->days instead of DateTime->d: https://stackoverflow.com/questions/30446918/what-is-the-difference-between-the-days-and-d-property-in-dateinterval		
+		$interval = $date_start->setTime(0,0,0)->diff($date_current->setTime(0,0,0));
 		
-		if($interval->d > 0) {
+		if($interval->days > 0) {
 			$day = new Day();
-			$day->setEndDate($date_start->format('Y-m-d H:i:s')); //because the dates are in reverse chronological order
-			$day->setStartDate($dates[$i - 1]);
-			print print_r($day, true) . "<br>";
+			$day->setEndDate($date_start->format('Y-m-d H:i:s')); //because the dates are in reverse chronological order.
+			$day->setStartDate($dates[$i - 1]);		
 			$days[] = $day;	
-			// if(count($days) == DAYS_PER_PAGE) {
-			// 	$next_offset = $i;
-			// 	break;
-			// }
+			if(count($days) == DAYS_PER_PAGE) {
+				$next_offset = $i;
+				break;
+			}
 			$date_start = $date_current;
 		}
 		
@@ -131,7 +134,6 @@ function plain_get($offset = 0) {
 			$day = new Day();
 			$day->setEndDate($date_start->format('Y-m-d H:i:s'));
 			$day->setStartDate($dates[$i]);
-			print print_r($day, true) . "<br>";
 
 			$days[] = $day;
 			$next_offset = -1;	
@@ -167,5 +169,5 @@ function plain_get($offset = 0) {
 		$days[$i]->setDevicesInfo($devices_info);
 	}
 	
-	// Flight::render('plain_get', array('days' => $days, 'prev_offset' => $prev_offset, 'next_offset' => $next_offset));
+	Flight::render('plain_get', array('days' => $days, 'prev_offset' => $prev_offset, 'next_offset' => $next_offset));
 }
