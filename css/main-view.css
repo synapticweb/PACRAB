@@ -1,0 +1,6 @@
+.current-page {
+	cursor: default;
+	text-decoration: none;
+	color:red;
+	pointer-events: none;
+}

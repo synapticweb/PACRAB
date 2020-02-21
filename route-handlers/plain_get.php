@@ -4,13 +4,16 @@
 * This class encapsulates information about a day interval.
 */
 class Day {
-	/** @var string The beginning date (Y-m-d H:i:s) of the interval*/
+	/** 
+	* @var string The beginning date (Y-m-d H:i:s) of the interval*/
 	private $start_date;
 
-	/** @var string The end date (Y-m-d H:i:s) of the interval*/
+	/** 
+	* @var string The end date (Y-m-d H:i:s) of the interval*/
 	private $end_date;
 
-	/** @var DeviceInfo[] An array of DeviceInfo objects that contains information about the devices that produced reports on that specific day.*/
+	/** 
+	* @var DeviceInfo[] An array of DeviceInfo objects that contains information about the devices that produced reports on that specific day.*/
 	private $devices_info;
 
 	public function setStartDate($start_date) {
@@ -42,13 +45,16 @@ class Day {
 * This class encapsulates information about a specific device that produced a report.
 */
 class DeviceInfo {
-	/** @var string The installation unique ID of the app, as reported by ACRA. */
+	/** 
+	* @var string The installation unique ID of the app, as reported by ACRA. */
 	private $installation_id;
 
-	/** @var string An identifier string computed by PACRAB for every installation id. It is composed by the btand of the device, the phone model, the product name and the Android version, all separated by dashes.*/
+	/** 
+	* @var string An identifier string computed by PACRAB for every installation id. It is composed by the btand of the device, the phone model, the product name and the Android version, all separated by dashes.*/
 	private $identifier_string;
 
-	/** @var int The number of reports produced by this device on a specific day. */
+	/** 
+	* @var int The number of reports produced by this device on a specific day. */
 	private $num_reports;
 
 	public function setInstallationId($installation_id) {
@@ -76,41 +82,16 @@ class DeviceInfo {
 	}
 }
 
-function plain_get($offset = 0) {
+/**
+* This function returns an array of day intervals computed using the field date_received from the db. 
+* @return Day[] The intervals are returned as an array of Day objects.
+*/
+function computeDays() {
 	$dates = ReportQuery::create()->select('date_received')->orderByDateReceived('desc')->find()->getData();
-
-	//The next code attempts to create day intervals on the basis of the receiving dates of the reports. These dates are stored in the db in the field date_received. The intervals are returned as an array of Day objects.
 	$days = array();
 	$date_start = null;
-	$prev_offset = -1; $next_offset;
-	$day_count = 0;
 
-	//We cannot implement a classical pagination system because we don't know how many pages are. So the pagination is limited to next and previous page navigation. The offsets in the $dates array must be calculated for both directions. We start with 'previous':
-	for($i = $offset; $i >= 0; --$i) {
-		$date_current = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $dates[$i]);
-		if($date_start == null)
-			$date_start = $date_current;
-		$interval = $date_start->setTime(0,0,0)->diff($date_current->setTime(0,0,0));
-
-		if($interval->days > 0) {
-			$day_count++;
-			$date_start = $date_current;
-		}
-
-	//The first idea was to use $day_count == DAYS_PER_PAGE as comparison condition. The problem is that when $day_count becomes DAYS_PER_PAGE there remains one whole day to decrement until the beginning of the page!
-		if($day_count > DAYS_PER_PAGE) {
-			$prev_offset = $i + 1; // when $days_count becomes > DAYS_PER_PAGE we are already one record off in the preceding page. It is therefore necessary to make adjustemnt.
-			break;
-		}
-	//The above system doesn't work on the first page because $day_count never becomes greater than DAYS_PER_PAGE. Therefore, we need a special condition.
-		if($i == 0 && $day_count > 0) //$day_count > 0 is necessary in order to prevent setting $prev_offset when accessing the first page.
-			$prev_offset = 0;
-	}
-
-	$date_start = null;
-
-	//Now we calculate the offset for 'next' and the days objects for the current page:
-	for($i = $offset; $i < count($dates); ++$i) {
+	for($i = 0; $i < count($dates); ++$i) {
 		$date_current = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $dates[$i]); //I use DateTimeImmutable because when calling setTime below I want to create a new object instead of modifying itself.
 		if($date_start == null)
 			$date_start = $date_current;
@@ -123,10 +104,6 @@ function plain_get($offset = 0) {
 			$day->setEndDate($date_start->format('Y-m-d H:i:s')); //because the dates are in reverse chronological order.
 			$day->setStartDate($dates[$i - 1]);		
 			$days[] = $day;	
-			if(count($days) == DAYS_PER_PAGE) {
-				$next_offset = $i;
-				break;
-			}
 			$date_start = $date_current;
 		}
 		
@@ -134,18 +111,33 @@ function plain_get($offset = 0) {
 			$day = new Day();
 			$day->setEndDate($date_start->format('Y-m-d H:i:s'));
 			$day->setStartDate($dates[$i]);
-
 			$days[] = $day;
-			$next_offset = -1;	
 		} 
 	}
 
+	return $days;
+}
+
+function plain_get($page = 1) {
+	session_start();
+	//TODO: page < 1, page > $num_pages, empty db.
+	if(isset($_SESSION['days']) && $page > 1)
+		$days = $_SESSION['days'];
+	else {
+		$days = computeDays();
+		$_SESSION['days'] = $days;
+	}
+
+	$offset = ($page - 1) * DAYS_PER_PAGE;
+	$days_to_display = array_slice($days, $offset, DAYS_PER_PAGE);
+	$num_pages = ceil(count($days) / DAYS_PER_PAGE);
+
 	//next, we figure what devices crashed in every day interval we got in the preceding step. The found devices are stored in a third element of ...
-	for ($i = 0; $i < count($days); ++$i) {
+	for ($i = 0; $i < count($days_to_display); ++$i) {
 		$devices_details = ReportQuery::create()
 			->select(array('installation_id', 'phone_model', 'brand', 'product', 'android_version'))
 			->distinct()
-			->filterByDateReceived(array('min' => $days[$i]->getStartDate(), 'max' => $days[$i]->getEndDate()))->find();
+			->filterByDateReceived(array('min' => $days_to_display[$i]->getStartDate(), 'max' => $days_to_display[$i]->getEndDate()))->find();
 
 		$iterator = $devices_details->getIterator();
 		$devices_info = array();
@@ -166,8 +158,8 @@ function plain_get($offset = 0) {
 			$iterator->next();
 		}
 
-		$days[$i]->setDevicesInfo($devices_info);
+		$days_to_display[$i]->setDevicesInfo($devices_info);
 	}
 	
-	Flight::render('plain_get', array('days' => $days, 'prev_offset' => $prev_offset, 'next_offset' => $next_offset));
+	Flight::render('plain_get', array('days' => $days_to_display, 'page' => $page, 'num_pages' => $num_pages));
 }
