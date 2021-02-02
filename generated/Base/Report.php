@@ -69,18 +69,18 @@ abstract class Report implements ActiveRecordInterface
     protected $id;
 
     /**
-     * The value for the android_version field.
+     * The value for the installation_id field.
      *
      * @var        string
      */
-    protected $android_version;
+    protected $installation_id;
 
     /**
-     * The value for the application_log field.
+     * The value for the report_id field.
      *
      * @var        string
      */
-    protected $application_log;
+    protected $report_id;
 
     /**
      * The value for the app_version_code field.
@@ -97,102 +97,11 @@ abstract class Report implements ActiveRecordInterface
     protected $app_version_name;
 
     /**
-     * The value for the available_mem_size field.
+     * The value for the package_name field.
      *
      * @var        string
      */
-    protected $available_mem_size;
-
-    /**
-     * The value for the brand field.
-     *
-     * @var        string
-     */
-    protected $brand;
-
-    /**
-     * The value for the build field.
-     *
-     * @var        string
-     */
-    protected $build;
-
-    /**
-     * The value for the build_config field.
-     *
-     * @var        string
-     */
-    protected $build_config;
-
-    /**
-     * The value for the crash_configuration field.
-     *
-     * @var        string
-     */
-    protected $crash_configuration;
-
-    /**
-     * The value for the custom_data field.
-     *
-     * @var        string
-     */
-    protected $custom_data;
-
-    /**
-     * The value for the date_received field.
-     *
-     * @var        DateTime
-     */
-    protected $date_received;
-
-    /**
-     * The value for the device_features field.
-     *
-     * @var        string
-     */
-    protected $device_features;
-
-    /**
-     * The value for the device_id field.
-     *
-     * @var        string
-     */
-    protected $device_id;
-
-    /**
-     * The value for the display field.
-     *
-     * @var        string
-     */
-    protected $display;
-
-    /**
-     * The value for the dropbox field.
-     *
-     * @var        string
-     */
-    protected $dropbox;
-
-    /**
-     * The value for the dumpsys_meminfo field.
-     *
-     * @var        string
-     */
-    protected $dumpsys_meminfo;
-
-    /**
-     * The value for the environment field.
-     *
-     * @var        string
-     */
-    protected $environment;
-
-    /**
-     * The value for the eventslog field.
-     *
-     * @var        string
-     */
-    protected $eventslog;
+    protected $package_name;
 
     /**
      * The value for the file_path field.
@@ -202,53 +111,18 @@ abstract class Report implements ActiveRecordInterface
     protected $file_path;
 
     /**
-     * The value for the initial_configuration field.
-     *
-     * @var        string
-     */
-    protected $initial_configuration;
-
-    /**
-     * The value for the installation_id field.
-     *
-     * @var        string
-     */
-    protected $installation_id;
-
-    /**
-     * The value for the is_silent field.
-     *
-     * @var        string
-     */
-    protected $is_silent;
-
-    /**
-     * The value for the logcat field.
-     *
-     * @var        string
-     */
-    protected $logcat;
-
-    /**
-     * The value for the media_codec_list field.
-     *
-     * @var        string
-     */
-    protected $media_codec_list;
-
-    /**
-     * The value for the package_name field.
-     *
-     * @var        string
-     */
-    protected $package_name;
-
-    /**
      * The value for the phone_model field.
      *
      * @var        string
      */
     protected $phone_model;
+
+    /**
+     * The value for the brand field.
+     *
+     * @var        string
+     */
+    protected $brand;
 
     /**
      * The value for the product field.
@@ -258,18 +132,193 @@ abstract class Report implements ActiveRecordInterface
     protected $product;
 
     /**
+     * The value for the android_version field.
+     *
+     * @var        string
+     */
+    protected $android_version;
+
+    /**
+     * The value for the build field.
+     *
+     * @var        string
+     */
+    protected $build;
+
+    /**
+     * The value for the total_mem_size field.
+     *
+     * @var        string
+     */
+    protected $total_mem_size;
+
+    /**
+     * The value for the available_mem_size field.
+     *
+     * @var        string
+     */
+    protected $available_mem_size;
+
+    /**
+     * The value for the build_config field.
+     *
+     * @var        string
+     */
+    protected $build_config;
+
+    /**
+     * The value for the custom_data field.
+     *
+     * @var        string
+     */
+    protected $custom_data;
+
+    /**
+     * The value for the is_silent field.
+     *
+     * @var        string
+     */
+    protected $is_silent;
+
+    /**
+     * The value for the stack_trace field.
+     *
+     * @var        string
+     */
+    protected $stack_trace;
+
+    /**
+     * The value for the initial_configuration field.
+     *
+     * @var        string
+     */
+    protected $initial_configuration;
+
+    /**
+     * The value for the crash_configuration field.
+     *
+     * @var        string
+     */
+    protected $crash_configuration;
+
+    /**
+     * The value for the display field.
+     *
+     * @var        string
+     */
+    protected $display;
+
+    /**
+     * The value for the user_comment field.
+     *
+     * @var        string
+     */
+    protected $user_comment;
+
+    /**
+     * The value for the user_email field.
+     *
+     * @var        string
+     */
+    protected $user_email;
+
+    /**
+     * The value for the user_app_start_date field.
+     *
+     * @var        string
+     */
+    protected $user_app_start_date;
+
+    /**
+     * The value for the user_crash_date field.
+     *
+     * @var        string
+     */
+    protected $user_crash_date;
+
+    /**
+     * The value for the dumpsys_meminfo field.
+     *
+     * @var        string
+     */
+    protected $dumpsys_meminfo;
+
+    /**
+     * The value for the logcat field.
+     *
+     * @var        string
+     */
+    protected $logcat;
+
+    /**
+     * The value for the device_features field.
+     *
+     * @var        string
+     */
+    protected $device_features;
+
+    /**
+     * The value for the environment field.
+     *
+     * @var        string
+     */
+    protected $environment;
+
+    /**
+     * The value for the shared_preferences field.
+     *
+     * @var        string
+     */
+    protected $shared_preferences;
+
+    /**
+     * The value for the date_received field.
+     *
+     * @var        DateTime
+     */
+    protected $date_received;
+
+    /**
+     * The value for the application_log field.
+     *
+     * @var        string
+     */
+    protected $application_log;
+
+    /**
+     * The value for the device_id field.
+     *
+     * @var        string
+     */
+    protected $device_id;
+
+    /**
+     * The value for the dropbox field.
+     *
+     * @var        string
+     */
+    protected $dropbox;
+
+    /**
+     * The value for the eventslog field.
+     *
+     * @var        string
+     */
+    protected $eventslog;
+
+    /**
+     * The value for the media_codec_list field.
+     *
+     * @var        string
+     */
+    protected $media_codec_list;
+
+    /**
      * The value for the radiolog field.
      *
      * @var        string
      */
     protected $radiolog;
-
-    /**
-     * The value for the report_id field.
-     *
-     * @var        string
-     */
-    protected $report_id;
 
     /**
      * The value for the settings_global field.
@@ -293,20 +342,6 @@ abstract class Report implements ActiveRecordInterface
     protected $settings_system;
 
     /**
-     * The value for the shared_preferences field.
-     *
-     * @var        string
-     */
-    protected $shared_preferences;
-
-    /**
-     * The value for the stack_trace field.
-     *
-     * @var        string
-     */
-    protected $stack_trace;
-
-    /**
      * The value for the stack_trace_hash field.
      *
      * @var        string
@@ -319,41 +354,6 @@ abstract class Report implements ActiveRecordInterface
      * @var        string
      */
     protected $thread_details;
-
-    /**
-     * The value for the total_mem_size field.
-     *
-     * @var        string
-     */
-    protected $total_mem_size;
-
-    /**
-     * The value for the user_app_start_date field.
-     *
-     * @var        string
-     */
-    protected $user_app_start_date;
-
-    /**
-     * The value for the user_comment field.
-     *
-     * @var        string
-     */
-    protected $user_comment;
-
-    /**
-     * The value for the user_crash_date field.
-     *
-     * @var        string
-     */
-    protected $user_crash_date;
-
-    /**
-     * The value for the user_email field.
-     *
-     * @var        string
-     */
-    protected $user_email;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -599,23 +599,23 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [android_version] column value.
+     * Get the [installation_id] column value.
      *
      * @return string
      */
-    public function getAndroidVersion()
+    public function getInstallationId()
     {
-        return $this->android_version;
+        return $this->installation_id;
     }
 
     /**
-     * Get the [application_log] column value.
+     * Get the [report_id] column value.
      *
      * @return string
      */
-    public function getApplicationLog()
+    public function getReportId()
     {
-        return $this->application_log;
+        return $this->report_id;
     }
 
     /**
@@ -639,13 +639,33 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [available_mem_size] column value.
+     * Get the [package_name] column value.
      *
      * @return string
      */
-    public function getAvailableMemSize()
+    public function getPackageName()
     {
-        return $this->available_mem_size;
+        return $this->package_name;
+    }
+
+    /**
+     * Get the [file_path] column value.
+     *
+     * @return string
+     */
+    public function getFilePath()
+    {
+        return $this->file_path;
+    }
+
+    /**
+     * Get the [phone_model] column value.
+     *
+     * @return string
+     */
+    public function getPhoneModel()
+    {
+        return $this->phone_model;
     }
 
     /**
@@ -659,6 +679,26 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
+     * Get the [product] column value.
+     *
+     * @return string
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Get the [android_version] column value.
+     *
+     * @return string
+     */
+    public function getAndroidVersion()
+    {
+        return $this->android_version;
+    }
+
+    /**
      * Get the [build] column value.
      *
      * @return string
@@ -666,6 +706,26 @@ abstract class Report implements ActiveRecordInterface
     public function getBuild()
     {
         return $this->build;
+    }
+
+    /**
+     * Get the [total_mem_size] column value.
+     *
+     * @return string
+     */
+    public function getTotalMemSize()
+    {
+        return $this->total_mem_size;
+    }
+
+    /**
+     * Get the [available_mem_size] column value.
+     *
+     * @return string
+     */
+    public function getAvailableMemSize()
+    {
+        return $this->available_mem_size;
     }
 
     /**
@@ -679,6 +739,46 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
+     * Get the [custom_data] column value.
+     *
+     * @return string
+     */
+    public function getCustomData()
+    {
+        return $this->custom_data;
+    }
+
+    /**
+     * Get the [is_silent] column value.
+     *
+     * @return string
+     */
+    public function getIsSilent()
+    {
+        return $this->is_silent;
+    }
+
+    /**
+     * Get the [stack_trace] column value.
+     *
+     * @return string
+     */
+    public function getStackTrace()
+    {
+        return $this->stack_trace;
+    }
+
+    /**
+     * Get the [initial_configuration] column value.
+     *
+     * @return string
+     */
+    public function getInitialConfiguration()
+    {
+        return $this->initial_configuration;
+    }
+
+    /**
      * Get the [crash_configuration] column value.
      *
      * @return string
@@ -689,13 +789,103 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [custom_data] column value.
+     * Get the [display] column value.
      *
      * @return string
      */
-    public function getCustomData()
+    public function getDisplay()
     {
-        return $this->custom_data;
+        return $this->display;
+    }
+
+    /**
+     * Get the [user_comment] column value.
+     *
+     * @return string
+     */
+    public function getUserComment()
+    {
+        return $this->user_comment;
+    }
+
+    /**
+     * Get the [user_email] column value.
+     *
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->user_email;
+    }
+
+    /**
+     * Get the [user_app_start_date] column value.
+     *
+     * @return string
+     */
+    public function getUserAppStartDate()
+    {
+        return $this->user_app_start_date;
+    }
+
+    /**
+     * Get the [user_crash_date] column value.
+     *
+     * @return string
+     */
+    public function getUserCrashDate()
+    {
+        return $this->user_crash_date;
+    }
+
+    /**
+     * Get the [dumpsys_meminfo] column value.
+     *
+     * @return string
+     */
+    public function getDumpsysMeminfo()
+    {
+        return $this->dumpsys_meminfo;
+    }
+
+    /**
+     * Get the [logcat] column value.
+     *
+     * @return string
+     */
+    public function getLogcat()
+    {
+        return $this->logcat;
+    }
+
+    /**
+     * Get the [device_features] column value.
+     *
+     * @return string
+     */
+    public function getDeviceFeatures()
+    {
+        return $this->device_features;
+    }
+
+    /**
+     * Get the [environment] column value.
+     *
+     * @return string
+     */
+    public function getEnvironment()
+    {
+        return $this->environment;
+    }
+
+    /**
+     * Get the [shared_preferences] column value.
+     *
+     * @return string
+     */
+    public function getSharedPreferences()
+    {
+        return $this->shared_preferences;
     }
 
     /**
@@ -719,13 +909,13 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [device_features] column value.
+     * Get the [application_log] column value.
      *
      * @return string
      */
-    public function getDeviceFeatures()
+    public function getApplicationLog()
     {
-        return $this->device_features;
+        return $this->application_log;
     }
 
     /**
@@ -739,16 +929,6 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [display] column value.
-     *
-     * @return string
-     */
-    public function getDisplay()
-    {
-        return $this->display;
-    }
-
-    /**
      * Get the [dropbox] column value.
      *
      * @return string
@@ -756,26 +936,6 @@ abstract class Report implements ActiveRecordInterface
     public function getDropbox()
     {
         return $this->dropbox;
-    }
-
-    /**
-     * Get the [dumpsys_meminfo] column value.
-     *
-     * @return string
-     */
-    public function getDumpsysMeminfo()
-    {
-        return $this->dumpsys_meminfo;
-    }
-
-    /**
-     * Get the [environment] column value.
-     *
-     * @return string
-     */
-    public function getEnvironment()
-    {
-        return $this->environment;
     }
 
     /**
@@ -789,56 +949,6 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [file_path] column value.
-     *
-     * @return string
-     */
-    public function getFilePath()
-    {
-        return $this->file_path;
-    }
-
-    /**
-     * Get the [initial_configuration] column value.
-     *
-     * @return string
-     */
-    public function getInitialConfiguration()
-    {
-        return $this->initial_configuration;
-    }
-
-    /**
-     * Get the [installation_id] column value.
-     *
-     * @return string
-     */
-    public function getInstallationId()
-    {
-        return $this->installation_id;
-    }
-
-    /**
-     * Get the [is_silent] column value.
-     *
-     * @return string
-     */
-    public function getIsSilent()
-    {
-        return $this->is_silent;
-    }
-
-    /**
-     * Get the [logcat] column value.
-     *
-     * @return string
-     */
-    public function getLogcat()
-    {
-        return $this->logcat;
-    }
-
-    /**
      * Get the [media_codec_list] column value.
      *
      * @return string
@@ -849,36 +959,6 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [package_name] column value.
-     *
-     * @return string
-     */
-    public function getPackageName()
-    {
-        return $this->package_name;
-    }
-
-    /**
-     * Get the [phone_model] column value.
-     *
-     * @return string
-     */
-    public function getPhoneModel()
-    {
-        return $this->phone_model;
-    }
-
-    /**
-     * Get the [product] column value.
-     *
-     * @return string
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
      * Get the [radiolog] column value.
      *
      * @return string
@@ -886,16 +966,6 @@ abstract class Report implements ActiveRecordInterface
     public function getRadiolog()
     {
         return $this->radiolog;
-    }
-
-    /**
-     * Get the [report_id] column value.
-     *
-     * @return string
-     */
-    public function getReportId()
-    {
-        return $this->report_id;
     }
 
     /**
@@ -929,26 +999,6 @@ abstract class Report implements ActiveRecordInterface
     }
 
     /**
-     * Get the [shared_preferences] column value.
-     *
-     * @return string
-     */
-    public function getSharedPreferences()
-    {
-        return $this->shared_preferences;
-    }
-
-    /**
-     * Get the [stack_trace] column value.
-     *
-     * @return string
-     */
-    public function getStackTrace()
-    {
-        return $this->stack_trace;
-    }
-
-    /**
      * Get the [stack_trace_hash] column value.
      *
      * @return string
@@ -966,56 +1016,6 @@ abstract class Report implements ActiveRecordInterface
     public function getThreadDetails()
     {
         return $this->thread_details;
-    }
-
-    /**
-     * Get the [total_mem_size] column value.
-     *
-     * @return string
-     */
-    public function getTotalMemSize()
-    {
-        return $this->total_mem_size;
-    }
-
-    /**
-     * Get the [user_app_start_date] column value.
-     *
-     * @return string
-     */
-    public function getUserAppStartDate()
-    {
-        return $this->user_app_start_date;
-    }
-
-    /**
-     * Get the [user_comment] column value.
-     *
-     * @return string
-     */
-    public function getUserComment()
-    {
-        return $this->user_comment;
-    }
-
-    /**
-     * Get the [user_crash_date] column value.
-     *
-     * @return string
-     */
-    public function getUserCrashDate()
-    {
-        return $this->user_crash_date;
-    }
-
-    /**
-     * Get the [user_email] column value.
-     *
-     * @return string
-     */
-    public function getUserEmail()
-    {
-        return $this->user_email;
     }
 
     /**
@@ -1039,44 +1039,44 @@ abstract class Report implements ActiveRecordInterface
     } // setId()
 
     /**
-     * Set the value of [android_version] column.
+     * Set the value of [installation_id] column.
      *
      * @param string $v new value
      * @return $this|\Report The current object (for fluent API support)
      */
-    public function setAndroidVersion($v)
+    public function setInstallationId($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->android_version !== $v) {
-            $this->android_version = $v;
-            $this->modifiedColumns[ReportTableMap::COL_ANDROID_VERSION] = true;
+        if ($this->installation_id !== $v) {
+            $this->installation_id = $v;
+            $this->modifiedColumns[ReportTableMap::COL_INSTALLATION_ID] = true;
         }
 
         return $this;
-    } // setAndroidVersion()
+    } // setInstallationId()
 
     /**
-     * Set the value of [application_log] column.
+     * Set the value of [report_id] column.
      *
      * @param string $v new value
      * @return $this|\Report The current object (for fluent API support)
      */
-    public function setApplicationLog($v)
+    public function setReportId($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->application_log !== $v) {
-            $this->application_log = $v;
-            $this->modifiedColumns[ReportTableMap::COL_APPLICATION_LOG] = true;
+        if ($this->report_id !== $v) {
+            $this->report_id = $v;
+            $this->modifiedColumns[ReportTableMap::COL_REPORT_ID] = true;
         }
 
         return $this;
-    } // setApplicationLog()
+    } // setReportId()
 
     /**
      * Set the value of [app_version_code] column.
@@ -1119,284 +1119,24 @@ abstract class Report implements ActiveRecordInterface
     } // setAppVersionName()
 
     /**
-     * Set the value of [available_mem_size] column.
+     * Set the value of [package_name] column.
      *
      * @param string $v new value
      * @return $this|\Report The current object (for fluent API support)
      */
-    public function setAvailableMemSize($v)
+    public function setPackageName($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->available_mem_size !== $v) {
-            $this->available_mem_size = $v;
-            $this->modifiedColumns[ReportTableMap::COL_AVAILABLE_MEM_SIZE] = true;
+        if ($this->package_name !== $v) {
+            $this->package_name = $v;
+            $this->modifiedColumns[ReportTableMap::COL_PACKAGE_NAME] = true;
         }
 
         return $this;
-    } // setAvailableMemSize()
-
-    /**
-     * Set the value of [brand] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setBrand($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->brand !== $v) {
-            $this->brand = $v;
-            $this->modifiedColumns[ReportTableMap::COL_BRAND] = true;
-        }
-
-        return $this;
-    } // setBrand()
-
-    /**
-     * Set the value of [build] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setBuild($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->build !== $v) {
-            $this->build = $v;
-            $this->modifiedColumns[ReportTableMap::COL_BUILD] = true;
-        }
-
-        return $this;
-    } // setBuild()
-
-    /**
-     * Set the value of [build_config] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setBuildConfig($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->build_config !== $v) {
-            $this->build_config = $v;
-            $this->modifiedColumns[ReportTableMap::COL_BUILD_CONFIG] = true;
-        }
-
-        return $this;
-    } // setBuildConfig()
-
-    /**
-     * Set the value of [crash_configuration] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setCrashConfiguration($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->crash_configuration !== $v) {
-            $this->crash_configuration = $v;
-            $this->modifiedColumns[ReportTableMap::COL_CRASH_CONFIGURATION] = true;
-        }
-
-        return $this;
-    } // setCrashConfiguration()
-
-    /**
-     * Set the value of [custom_data] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setCustomData($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->custom_data !== $v) {
-            $this->custom_data = $v;
-            $this->modifiedColumns[ReportTableMap::COL_CUSTOM_DATA] = true;
-        }
-
-        return $this;
-    } // setCustomData()
-
-    /**
-     * Sets the value of [date_received] column to a normalized version of the date/time value specified.
-     *
-     * @param  mixed $v string, integer (timestamp), or \DateTimeInterface value.
-     *               Empty strings are treated as NULL.
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setDateReceived($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->date_received !== null || $dt !== null) {
-            if ($this->date_received === null || $dt === null || $dt->format("Y-m-d H:i:s.u") !== $this->date_received->format("Y-m-d H:i:s.u")) {
-                $this->date_received = $dt === null ? null : clone $dt;
-                $this->modifiedColumns[ReportTableMap::COL_DATE_RECEIVED] = true;
-            }
-        } // if either are not null
-
-        return $this;
-    } // setDateReceived()
-
-    /**
-     * Set the value of [device_features] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setDeviceFeatures($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->device_features !== $v) {
-            $this->device_features = $v;
-            $this->modifiedColumns[ReportTableMap::COL_DEVICE_FEATURES] = true;
-        }
-
-        return $this;
-    } // setDeviceFeatures()
-
-    /**
-     * Set the value of [device_id] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setDeviceId($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->device_id !== $v) {
-            $this->device_id = $v;
-            $this->modifiedColumns[ReportTableMap::COL_DEVICE_ID] = true;
-        }
-
-        return $this;
-    } // setDeviceId()
-
-    /**
-     * Set the value of [display] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setDisplay($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->display !== $v) {
-            $this->display = $v;
-            $this->modifiedColumns[ReportTableMap::COL_DISPLAY] = true;
-        }
-
-        return $this;
-    } // setDisplay()
-
-    /**
-     * Set the value of [dropbox] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setDropbox($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->dropbox !== $v) {
-            $this->dropbox = $v;
-            $this->modifiedColumns[ReportTableMap::COL_DROPBOX] = true;
-        }
-
-        return $this;
-    } // setDropbox()
-
-    /**
-     * Set the value of [dumpsys_meminfo] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setDumpsysMeminfo($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->dumpsys_meminfo !== $v) {
-            $this->dumpsys_meminfo = $v;
-            $this->modifiedColumns[ReportTableMap::COL_DUMPSYS_MEMINFO] = true;
-        }
-
-        return $this;
-    } // setDumpsysMeminfo()
-
-    /**
-     * Set the value of [environment] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setEnvironment($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->environment !== $v) {
-            $this->environment = $v;
-            $this->modifiedColumns[ReportTableMap::COL_ENVIRONMENT] = true;
-        }
-
-        return $this;
-    } // setEnvironment()
-
-    /**
-     * Set the value of [eventslog] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setEventslog($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->eventslog !== $v) {
-            $this->eventslog = $v;
-            $this->modifiedColumns[ReportTableMap::COL_EVENTSLOG] = true;
-        }
-
-        return $this;
-    } // setEventslog()
+    } // setPackageName()
 
     /**
      * Set the value of [file_path] column.
@@ -1419,126 +1159,6 @@ abstract class Report implements ActiveRecordInterface
     } // setFilePath()
 
     /**
-     * Set the value of [initial_configuration] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setInitialConfiguration($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->initial_configuration !== $v) {
-            $this->initial_configuration = $v;
-            $this->modifiedColumns[ReportTableMap::COL_INITIAL_CONFIGURATION] = true;
-        }
-
-        return $this;
-    } // setInitialConfiguration()
-
-    /**
-     * Set the value of [installation_id] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setInstallationId($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->installation_id !== $v) {
-            $this->installation_id = $v;
-            $this->modifiedColumns[ReportTableMap::COL_INSTALLATION_ID] = true;
-        }
-
-        return $this;
-    } // setInstallationId()
-
-    /**
-     * Set the value of [is_silent] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setIsSilent($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->is_silent !== $v) {
-            $this->is_silent = $v;
-            $this->modifiedColumns[ReportTableMap::COL_IS_SILENT] = true;
-        }
-
-        return $this;
-    } // setIsSilent()
-
-    /**
-     * Set the value of [logcat] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setLogcat($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->logcat !== $v) {
-            $this->logcat = $v;
-            $this->modifiedColumns[ReportTableMap::COL_LOGCAT] = true;
-        }
-
-        return $this;
-    } // setLogcat()
-
-    /**
-     * Set the value of [media_codec_list] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setMediaCodecList($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->media_codec_list !== $v) {
-            $this->media_codec_list = $v;
-            $this->modifiedColumns[ReportTableMap::COL_MEDIA_CODEC_LIST] = true;
-        }
-
-        return $this;
-    } // setMediaCodecList()
-
-    /**
-     * Set the value of [package_name] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setPackageName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->package_name !== $v) {
-            $this->package_name = $v;
-            $this->modifiedColumns[ReportTableMap::COL_PACKAGE_NAME] = true;
-        }
-
-        return $this;
-    } // setPackageName()
-
-    /**
      * Set the value of [phone_model] column.
      *
      * @param string $v new value
@@ -1557,6 +1177,26 @@ abstract class Report implements ActiveRecordInterface
 
         return $this;
     } // setPhoneModel()
+
+    /**
+     * Set the value of [brand] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setBrand($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->brand !== $v) {
+            $this->brand = $v;
+            $this->modifiedColumns[ReportTableMap::COL_BRAND] = true;
+        }
+
+        return $this;
+    } // setBrand()
 
     /**
      * Set the value of [product] column.
@@ -1579,6 +1219,526 @@ abstract class Report implements ActiveRecordInterface
     } // setProduct()
 
     /**
+     * Set the value of [android_version] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setAndroidVersion($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->android_version !== $v) {
+            $this->android_version = $v;
+            $this->modifiedColumns[ReportTableMap::COL_ANDROID_VERSION] = true;
+        }
+
+        return $this;
+    } // setAndroidVersion()
+
+    /**
+     * Set the value of [build] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setBuild($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->build !== $v) {
+            $this->build = $v;
+            $this->modifiedColumns[ReportTableMap::COL_BUILD] = true;
+        }
+
+        return $this;
+    } // setBuild()
+
+    /**
+     * Set the value of [total_mem_size] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setTotalMemSize($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->total_mem_size !== $v) {
+            $this->total_mem_size = $v;
+            $this->modifiedColumns[ReportTableMap::COL_TOTAL_MEM_SIZE] = true;
+        }
+
+        return $this;
+    } // setTotalMemSize()
+
+    /**
+     * Set the value of [available_mem_size] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setAvailableMemSize($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->available_mem_size !== $v) {
+            $this->available_mem_size = $v;
+            $this->modifiedColumns[ReportTableMap::COL_AVAILABLE_MEM_SIZE] = true;
+        }
+
+        return $this;
+    } // setAvailableMemSize()
+
+    /**
+     * Set the value of [build_config] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setBuildConfig($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->build_config !== $v) {
+            $this->build_config = $v;
+            $this->modifiedColumns[ReportTableMap::COL_BUILD_CONFIG] = true;
+        }
+
+        return $this;
+    } // setBuildConfig()
+
+    /**
+     * Set the value of [custom_data] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setCustomData($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->custom_data !== $v) {
+            $this->custom_data = $v;
+            $this->modifiedColumns[ReportTableMap::COL_CUSTOM_DATA] = true;
+        }
+
+        return $this;
+    } // setCustomData()
+
+    /**
+     * Set the value of [is_silent] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setIsSilent($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->is_silent !== $v) {
+            $this->is_silent = $v;
+            $this->modifiedColumns[ReportTableMap::COL_IS_SILENT] = true;
+        }
+
+        return $this;
+    } // setIsSilent()
+
+    /**
+     * Set the value of [stack_trace] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setStackTrace($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->stack_trace !== $v) {
+            $this->stack_trace = $v;
+            $this->modifiedColumns[ReportTableMap::COL_STACK_TRACE] = true;
+        }
+
+        return $this;
+    } // setStackTrace()
+
+    /**
+     * Set the value of [initial_configuration] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setInitialConfiguration($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->initial_configuration !== $v) {
+            $this->initial_configuration = $v;
+            $this->modifiedColumns[ReportTableMap::COL_INITIAL_CONFIGURATION] = true;
+        }
+
+        return $this;
+    } // setInitialConfiguration()
+
+    /**
+     * Set the value of [crash_configuration] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setCrashConfiguration($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->crash_configuration !== $v) {
+            $this->crash_configuration = $v;
+            $this->modifiedColumns[ReportTableMap::COL_CRASH_CONFIGURATION] = true;
+        }
+
+        return $this;
+    } // setCrashConfiguration()
+
+    /**
+     * Set the value of [display] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setDisplay($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->display !== $v) {
+            $this->display = $v;
+            $this->modifiedColumns[ReportTableMap::COL_DISPLAY] = true;
+        }
+
+        return $this;
+    } // setDisplay()
+
+    /**
+     * Set the value of [user_comment] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setUserComment($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->user_comment !== $v) {
+            $this->user_comment = $v;
+            $this->modifiedColumns[ReportTableMap::COL_USER_COMMENT] = true;
+        }
+
+        return $this;
+    } // setUserComment()
+
+    /**
+     * Set the value of [user_email] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setUserEmail($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->user_email !== $v) {
+            $this->user_email = $v;
+            $this->modifiedColumns[ReportTableMap::COL_USER_EMAIL] = true;
+        }
+
+        return $this;
+    } // setUserEmail()
+
+    /**
+     * Set the value of [user_app_start_date] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setUserAppStartDate($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->user_app_start_date !== $v) {
+            $this->user_app_start_date = $v;
+            $this->modifiedColumns[ReportTableMap::COL_USER_APP_START_DATE] = true;
+        }
+
+        return $this;
+    } // setUserAppStartDate()
+
+    /**
+     * Set the value of [user_crash_date] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setUserCrashDate($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->user_crash_date !== $v) {
+            $this->user_crash_date = $v;
+            $this->modifiedColumns[ReportTableMap::COL_USER_CRASH_DATE] = true;
+        }
+
+        return $this;
+    } // setUserCrashDate()
+
+    /**
+     * Set the value of [dumpsys_meminfo] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setDumpsysMeminfo($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->dumpsys_meminfo !== $v) {
+            $this->dumpsys_meminfo = $v;
+            $this->modifiedColumns[ReportTableMap::COL_DUMPSYS_MEMINFO] = true;
+        }
+
+        return $this;
+    } // setDumpsysMeminfo()
+
+    /**
+     * Set the value of [logcat] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setLogcat($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->logcat !== $v) {
+            $this->logcat = $v;
+            $this->modifiedColumns[ReportTableMap::COL_LOGCAT] = true;
+        }
+
+        return $this;
+    } // setLogcat()
+
+    /**
+     * Set the value of [device_features] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setDeviceFeatures($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->device_features !== $v) {
+            $this->device_features = $v;
+            $this->modifiedColumns[ReportTableMap::COL_DEVICE_FEATURES] = true;
+        }
+
+        return $this;
+    } // setDeviceFeatures()
+
+    /**
+     * Set the value of [environment] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setEnvironment($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->environment !== $v) {
+            $this->environment = $v;
+            $this->modifiedColumns[ReportTableMap::COL_ENVIRONMENT] = true;
+        }
+
+        return $this;
+    } // setEnvironment()
+
+    /**
+     * Set the value of [shared_preferences] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setSharedPreferences($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->shared_preferences !== $v) {
+            $this->shared_preferences = $v;
+            $this->modifiedColumns[ReportTableMap::COL_SHARED_PREFERENCES] = true;
+        }
+
+        return $this;
+    } // setSharedPreferences()
+
+    /**
+     * Sets the value of [date_received] column to a normalized version of the date/time value specified.
+     *
+     * @param  mixed $v string, integer (timestamp), or \DateTimeInterface value.
+     *               Empty strings are treated as NULL.
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setDateReceived($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->date_received !== null || $dt !== null) {
+            if ($this->date_received === null || $dt === null || $dt->format("Y-m-d H:i:s.u") !== $this->date_received->format("Y-m-d H:i:s.u")) {
+                $this->date_received = $dt === null ? null : clone $dt;
+                $this->modifiedColumns[ReportTableMap::COL_DATE_RECEIVED] = true;
+            }
+        } // if either are not null
+
+        return $this;
+    } // setDateReceived()
+
+    /**
+     * Set the value of [application_log] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setApplicationLog($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->application_log !== $v) {
+            $this->application_log = $v;
+            $this->modifiedColumns[ReportTableMap::COL_APPLICATION_LOG] = true;
+        }
+
+        return $this;
+    } // setApplicationLog()
+
+    /**
+     * Set the value of [device_id] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setDeviceId($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->device_id !== $v) {
+            $this->device_id = $v;
+            $this->modifiedColumns[ReportTableMap::COL_DEVICE_ID] = true;
+        }
+
+        return $this;
+    } // setDeviceId()
+
+    /**
+     * Set the value of [dropbox] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setDropbox($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->dropbox !== $v) {
+            $this->dropbox = $v;
+            $this->modifiedColumns[ReportTableMap::COL_DROPBOX] = true;
+        }
+
+        return $this;
+    } // setDropbox()
+
+    /**
+     * Set the value of [eventslog] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setEventslog($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->eventslog !== $v) {
+            $this->eventslog = $v;
+            $this->modifiedColumns[ReportTableMap::COL_EVENTSLOG] = true;
+        }
+
+        return $this;
+    } // setEventslog()
+
+    /**
+     * Set the value of [media_codec_list] column.
+     *
+     * @param string $v new value
+     * @return $this|\Report The current object (for fluent API support)
+     */
+    public function setMediaCodecList($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->media_codec_list !== $v) {
+            $this->media_codec_list = $v;
+            $this->modifiedColumns[ReportTableMap::COL_MEDIA_CODEC_LIST] = true;
+        }
+
+        return $this;
+    } // setMediaCodecList()
+
+    /**
      * Set the value of [radiolog] column.
      *
      * @param string $v new value
@@ -1597,26 +1757,6 @@ abstract class Report implements ActiveRecordInterface
 
         return $this;
     } // setRadiolog()
-
-    /**
-     * Set the value of [report_id] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setReportId($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->report_id !== $v) {
-            $this->report_id = $v;
-            $this->modifiedColumns[ReportTableMap::COL_REPORT_ID] = true;
-        }
-
-        return $this;
-    } // setReportId()
 
     /**
      * Set the value of [settings_global] column.
@@ -1679,46 +1819,6 @@ abstract class Report implements ActiveRecordInterface
     } // setSettingsSystem()
 
     /**
-     * Set the value of [shared_preferences] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setSharedPreferences($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->shared_preferences !== $v) {
-            $this->shared_preferences = $v;
-            $this->modifiedColumns[ReportTableMap::COL_SHARED_PREFERENCES] = true;
-        }
-
-        return $this;
-    } // setSharedPreferences()
-
-    /**
-     * Set the value of [stack_trace] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setStackTrace($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->stack_trace !== $v) {
-            $this->stack_trace = $v;
-            $this->modifiedColumns[ReportTableMap::COL_STACK_TRACE] = true;
-        }
-
-        return $this;
-    } // setStackTrace()
-
-    /**
      * Set the value of [stack_trace_hash] column.
      *
      * @param string $v new value
@@ -1759,106 +1859,6 @@ abstract class Report implements ActiveRecordInterface
     } // setThreadDetails()
 
     /**
-     * Set the value of [total_mem_size] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setTotalMemSize($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->total_mem_size !== $v) {
-            $this->total_mem_size = $v;
-            $this->modifiedColumns[ReportTableMap::COL_TOTAL_MEM_SIZE] = true;
-        }
-
-        return $this;
-    } // setTotalMemSize()
-
-    /**
-     * Set the value of [user_app_start_date] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setUserAppStartDate($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->user_app_start_date !== $v) {
-            $this->user_app_start_date = $v;
-            $this->modifiedColumns[ReportTableMap::COL_USER_APP_START_DATE] = true;
-        }
-
-        return $this;
-    } // setUserAppStartDate()
-
-    /**
-     * Set the value of [user_comment] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setUserComment($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->user_comment !== $v) {
-            $this->user_comment = $v;
-            $this->modifiedColumns[ReportTableMap::COL_USER_COMMENT] = true;
-        }
-
-        return $this;
-    } // setUserComment()
-
-    /**
-     * Set the value of [user_crash_date] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setUserCrashDate($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->user_crash_date !== $v) {
-            $this->user_crash_date = $v;
-            $this->modifiedColumns[ReportTableMap::COL_USER_CRASH_DATE] = true;
-        }
-
-        return $this;
-    } // setUserCrashDate()
-
-    /**
-     * Set the value of [user_email] column.
-     *
-     * @param string $v new value
-     * @return $this|\Report The current object (for fluent API support)
-     */
-    public function setUserEmail($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->user_email !== $v) {
-            $this->user_email = $v;
-            $this->modifiedColumns[ReportTableMap::COL_USER_EMAIL] = true;
-        }
-
-        return $this;
-    } // setUserEmail()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -1897,11 +1897,11 @@ abstract class Report implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : ReportTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : ReportTableMap::translateFieldName('AndroidVersion', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->android_version = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : ReportTableMap::translateFieldName('InstallationId', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->installation_id = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : ReportTableMap::translateFieldName('ApplicationLog', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->application_log = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : ReportTableMap::translateFieldName('ReportId', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->report_id = (null !== $col) ? (string) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : ReportTableMap::translateFieldName('AppVersionCode', TableMap::TYPE_PHPNAME, $indexType)];
             $this->app_version_code = (null !== $col) ? (string) $col : null;
@@ -1909,119 +1909,119 @@ abstract class Report implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : ReportTableMap::translateFieldName('AppVersionName', TableMap::TYPE_PHPNAME, $indexType)];
             $this->app_version_name = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : ReportTableMap::translateFieldName('AvailableMemSize', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->available_mem_size = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : ReportTableMap::translateFieldName('PackageName', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->package_name = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : ReportTableMap::translateFieldName('Brand', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : ReportTableMap::translateFieldName('FilePath', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->file_path = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : ReportTableMap::translateFieldName('PhoneModel', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone_model = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : ReportTableMap::translateFieldName('Brand', TableMap::TYPE_PHPNAME, $indexType)];
             $this->brand = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : ReportTableMap::translateFieldName('Build', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : ReportTableMap::translateFieldName('Product', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->product = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : ReportTableMap::translateFieldName('AndroidVersion', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->android_version = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : ReportTableMap::translateFieldName('Build', TableMap::TYPE_PHPNAME, $indexType)];
             $this->build = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : ReportTableMap::translateFieldName('BuildConfig', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 12 + $startcol : ReportTableMap::translateFieldName('TotalMemSize', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->total_mem_size = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 13 + $startcol : ReportTableMap::translateFieldName('AvailableMemSize', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->available_mem_size = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 14 + $startcol : ReportTableMap::translateFieldName('BuildConfig', TableMap::TYPE_PHPNAME, $indexType)];
             $this->build_config = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : ReportTableMap::translateFieldName('CrashConfiguration', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->crash_configuration = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : ReportTableMap::translateFieldName('CustomData', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 15 + $startcol : ReportTableMap::translateFieldName('CustomData', TableMap::TYPE_PHPNAME, $indexType)];
             $this->custom_data = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : ReportTableMap::translateFieldName('DateReceived', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 16 + $startcol : ReportTableMap::translateFieldName('IsSilent', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->is_silent = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 17 + $startcol : ReportTableMap::translateFieldName('StackTrace', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->stack_trace = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 18 + $startcol : ReportTableMap::translateFieldName('InitialConfiguration', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->initial_configuration = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 19 + $startcol : ReportTableMap::translateFieldName('CrashConfiguration', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->crash_configuration = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 20 + $startcol : ReportTableMap::translateFieldName('Display', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->display = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 21 + $startcol : ReportTableMap::translateFieldName('UserComment', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->user_comment = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 22 + $startcol : ReportTableMap::translateFieldName('UserEmail', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->user_email = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 23 + $startcol : ReportTableMap::translateFieldName('UserAppStartDate', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->user_app_start_date = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 24 + $startcol : ReportTableMap::translateFieldName('UserCrashDate', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->user_crash_date = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 25 + $startcol : ReportTableMap::translateFieldName('DumpsysMeminfo', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->dumpsys_meminfo = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 26 + $startcol : ReportTableMap::translateFieldName('Logcat', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->logcat = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 27 + $startcol : ReportTableMap::translateFieldName('DeviceFeatures', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->device_features = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 28 + $startcol : ReportTableMap::translateFieldName('Environment', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->environment = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 29 + $startcol : ReportTableMap::translateFieldName('SharedPreferences', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->shared_preferences = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 30 + $startcol : ReportTableMap::translateFieldName('DateReceived', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
             $this->date_received = (null !== $col) ? PropelDateTime::newInstance($col, null, 'DateTime') : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 12 + $startcol : ReportTableMap::translateFieldName('DeviceFeatures', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->device_features = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 31 + $startcol : ReportTableMap::translateFieldName('ApplicationLog', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->application_log = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 13 + $startcol : ReportTableMap::translateFieldName('DeviceId', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 32 + $startcol : ReportTableMap::translateFieldName('DeviceId', TableMap::TYPE_PHPNAME, $indexType)];
             $this->device_id = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 14 + $startcol : ReportTableMap::translateFieldName('Display', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->display = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 15 + $startcol : ReportTableMap::translateFieldName('Dropbox', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 33 + $startcol : ReportTableMap::translateFieldName('Dropbox', TableMap::TYPE_PHPNAME, $indexType)];
             $this->dropbox = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 16 + $startcol : ReportTableMap::translateFieldName('DumpsysMeminfo', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->dumpsys_meminfo = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 17 + $startcol : ReportTableMap::translateFieldName('Environment', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->environment = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 18 + $startcol : ReportTableMap::translateFieldName('Eventslog', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 34 + $startcol : ReportTableMap::translateFieldName('Eventslog', TableMap::TYPE_PHPNAME, $indexType)];
             $this->eventslog = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 19 + $startcol : ReportTableMap::translateFieldName('FilePath', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->file_path = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 20 + $startcol : ReportTableMap::translateFieldName('InitialConfiguration', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->initial_configuration = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 21 + $startcol : ReportTableMap::translateFieldName('InstallationId', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->installation_id = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 22 + $startcol : ReportTableMap::translateFieldName('IsSilent', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->is_silent = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 23 + $startcol : ReportTableMap::translateFieldName('Logcat', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->logcat = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 24 + $startcol : ReportTableMap::translateFieldName('MediaCodecList', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 35 + $startcol : ReportTableMap::translateFieldName('MediaCodecList', TableMap::TYPE_PHPNAME, $indexType)];
             $this->media_codec_list = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 25 + $startcol : ReportTableMap::translateFieldName('PackageName', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->package_name = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 26 + $startcol : ReportTableMap::translateFieldName('PhoneModel', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phone_model = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 27 + $startcol : ReportTableMap::translateFieldName('Product', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->product = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 28 + $startcol : ReportTableMap::translateFieldName('Radiolog', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 36 + $startcol : ReportTableMap::translateFieldName('Radiolog', TableMap::TYPE_PHPNAME, $indexType)];
             $this->radiolog = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 29 + $startcol : ReportTableMap::translateFieldName('ReportId', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->report_id = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 30 + $startcol : ReportTableMap::translateFieldName('SettingsGlobal', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 37 + $startcol : ReportTableMap::translateFieldName('SettingsGlobal', TableMap::TYPE_PHPNAME, $indexType)];
             $this->settings_global = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 31 + $startcol : ReportTableMap::translateFieldName('SettingsSecure', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 38 + $startcol : ReportTableMap::translateFieldName('SettingsSecure', TableMap::TYPE_PHPNAME, $indexType)];
             $this->settings_secure = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 32 + $startcol : ReportTableMap::translateFieldName('SettingsSystem', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 39 + $startcol : ReportTableMap::translateFieldName('SettingsSystem', TableMap::TYPE_PHPNAME, $indexType)];
             $this->settings_system = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 33 + $startcol : ReportTableMap::translateFieldName('SharedPreferences', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->shared_preferences = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 34 + $startcol : ReportTableMap::translateFieldName('StackTrace', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->stack_trace = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 35 + $startcol : ReportTableMap::translateFieldName('StackTraceHash', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 40 + $startcol : ReportTableMap::translateFieldName('StackTraceHash', TableMap::TYPE_PHPNAME, $indexType)];
             $this->stack_trace_hash = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 36 + $startcol : ReportTableMap::translateFieldName('ThreadDetails', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 41 + $startcol : ReportTableMap::translateFieldName('ThreadDetails', TableMap::TYPE_PHPNAME, $indexType)];
             $this->thread_details = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 37 + $startcol : ReportTableMap::translateFieldName('TotalMemSize', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->total_mem_size = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 38 + $startcol : ReportTableMap::translateFieldName('UserAppStartDate', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->user_app_start_date = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 39 + $startcol : ReportTableMap::translateFieldName('UserComment', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->user_comment = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 40 + $startcol : ReportTableMap::translateFieldName('UserCrashDate', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->user_crash_date = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 41 + $startcol : ReportTableMap::translateFieldName('UserEmail', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->user_email = (null !== $col) ? (string) $col : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -2234,11 +2234,11 @@ abstract class Report implements ActiveRecordInterface
         if ($this->isColumnModified(ReportTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
-        if ($this->isColumnModified(ReportTableMap::COL_ANDROID_VERSION)) {
-            $modifiedColumns[':p' . $index++]  = 'android_version';
+        if ($this->isColumnModified(ReportTableMap::COL_INSTALLATION_ID)) {
+            $modifiedColumns[':p' . $index++]  = 'installation_id';
         }
-        if ($this->isColumnModified(ReportTableMap::COL_APPLICATION_LOG)) {
-            $modifiedColumns[':p' . $index++]  = 'application_log';
+        if ($this->isColumnModified(ReportTableMap::COL_REPORT_ID)) {
+            $modifiedColumns[':p' . $index++]  = 'report_id';
         }
         if ($this->isColumnModified(ReportTableMap::COL_APP_VERSION_CODE)) {
             $modifiedColumns[':p' . $index++]  = 'app_version_code';
@@ -2246,80 +2246,101 @@ abstract class Report implements ActiveRecordInterface
         if ($this->isColumnModified(ReportTableMap::COL_APP_VERSION_NAME)) {
             $modifiedColumns[':p' . $index++]  = 'app_version_name';
         }
-        if ($this->isColumnModified(ReportTableMap::COL_AVAILABLE_MEM_SIZE)) {
-            $modifiedColumns[':p' . $index++]  = 'available_mem_size';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_BRAND)) {
-            $modifiedColumns[':p' . $index++]  = 'brand';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_BUILD)) {
-            $modifiedColumns[':p' . $index++]  = 'build';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_BUILD_CONFIG)) {
-            $modifiedColumns[':p' . $index++]  = 'build_config';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_CRASH_CONFIGURATION)) {
-            $modifiedColumns[':p' . $index++]  = 'crash_configuration';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_CUSTOM_DATA)) {
-            $modifiedColumns[':p' . $index++]  = 'custom_data';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DATE_RECEIVED)) {
-            $modifiedColumns[':p' . $index++]  = 'date_received';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_FEATURES)) {
-            $modifiedColumns[':p' . $index++]  = 'device_features';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_ID)) {
-            $modifiedColumns[':p' . $index++]  = 'device_id';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DISPLAY)) {
-            $modifiedColumns[':p' . $index++]  = 'display';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DROPBOX)) {
-            $modifiedColumns[':p' . $index++]  = 'dropbox';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DUMPSYS_MEMINFO)) {
-            $modifiedColumns[':p' . $index++]  = 'dumpsys_meminfo';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_ENVIRONMENT)) {
-            $modifiedColumns[':p' . $index++]  = 'environment';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_EVENTSLOG)) {
-            $modifiedColumns[':p' . $index++]  = 'eventslog';
+        if ($this->isColumnModified(ReportTableMap::COL_PACKAGE_NAME)) {
+            $modifiedColumns[':p' . $index++]  = 'package_name';
         }
         if ($this->isColumnModified(ReportTableMap::COL_FILE_PATH)) {
             $modifiedColumns[':p' . $index++]  = 'file_path';
         }
-        if ($this->isColumnModified(ReportTableMap::COL_INITIAL_CONFIGURATION)) {
-            $modifiedColumns[':p' . $index++]  = 'initial_configuration';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_INSTALLATION_ID)) {
-            $modifiedColumns[':p' . $index++]  = 'installation_id';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_IS_SILENT)) {
-            $modifiedColumns[':p' . $index++]  = 'is_silent';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_LOGCAT)) {
-            $modifiedColumns[':p' . $index++]  = 'logcat';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_MEDIA_CODEC_LIST)) {
-            $modifiedColumns[':p' . $index++]  = 'media_codec_list';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_PACKAGE_NAME)) {
-            $modifiedColumns[':p' . $index++]  = 'package_name';
-        }
         if ($this->isColumnModified(ReportTableMap::COL_PHONE_MODEL)) {
             $modifiedColumns[':p' . $index++]  = 'phone_model';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_BRAND)) {
+            $modifiedColumns[':p' . $index++]  = 'brand';
         }
         if ($this->isColumnModified(ReportTableMap::COL_PRODUCT)) {
             $modifiedColumns[':p' . $index++]  = 'product';
         }
+        if ($this->isColumnModified(ReportTableMap::COL_ANDROID_VERSION)) {
+            $modifiedColumns[':p' . $index++]  = 'android_version';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_BUILD)) {
+            $modifiedColumns[':p' . $index++]  = 'build';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_TOTAL_MEM_SIZE)) {
+            $modifiedColumns[':p' . $index++]  = 'total_mem_size';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_AVAILABLE_MEM_SIZE)) {
+            $modifiedColumns[':p' . $index++]  = 'available_mem_size';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_BUILD_CONFIG)) {
+            $modifiedColumns[':p' . $index++]  = 'build_config';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_CUSTOM_DATA)) {
+            $modifiedColumns[':p' . $index++]  = 'custom_data';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_IS_SILENT)) {
+            $modifiedColumns[':p' . $index++]  = 'is_silent';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_STACK_TRACE)) {
+            $modifiedColumns[':p' . $index++]  = 'stack_trace';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_INITIAL_CONFIGURATION)) {
+            $modifiedColumns[':p' . $index++]  = 'initial_configuration';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_CRASH_CONFIGURATION)) {
+            $modifiedColumns[':p' . $index++]  = 'crash_configuration';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DISPLAY)) {
+            $modifiedColumns[':p' . $index++]  = 'display';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_COMMENT)) {
+            $modifiedColumns[':p' . $index++]  = 'user_comment';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_EMAIL)) {
+            $modifiedColumns[':p' . $index++]  = 'user_email';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_APP_START_DATE)) {
+            $modifiedColumns[':p' . $index++]  = 'user_app_start_date';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_CRASH_DATE)) {
+            $modifiedColumns[':p' . $index++]  = 'user_crash_date';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DUMPSYS_MEMINFO)) {
+            $modifiedColumns[':p' . $index++]  = 'dumpsys_meminfo';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_LOGCAT)) {
+            $modifiedColumns[':p' . $index++]  = 'logcat';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_FEATURES)) {
+            $modifiedColumns[':p' . $index++]  = 'device_features';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_ENVIRONMENT)) {
+            $modifiedColumns[':p' . $index++]  = 'environment';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_SHARED_PREFERENCES)) {
+            $modifiedColumns[':p' . $index++]  = 'shared_preferences';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DATE_RECEIVED)) {
+            $modifiedColumns[':p' . $index++]  = 'date_received';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_APPLICATION_LOG)) {
+            $modifiedColumns[':p' . $index++]  = 'application_log';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_ID)) {
+            $modifiedColumns[':p' . $index++]  = 'device_id';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DROPBOX)) {
+            $modifiedColumns[':p' . $index++]  = 'dropbox';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_EVENTSLOG)) {
+            $modifiedColumns[':p' . $index++]  = 'eventslog';
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_MEDIA_CODEC_LIST)) {
+            $modifiedColumns[':p' . $index++]  = 'media_codec_list';
+        }
         if ($this->isColumnModified(ReportTableMap::COL_RADIOLOG)) {
             $modifiedColumns[':p' . $index++]  = 'radiolog';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_REPORT_ID)) {
-            $modifiedColumns[':p' . $index++]  = 'report_id';
         }
         if ($this->isColumnModified(ReportTableMap::COL_SETTINGS_GLOBAL)) {
             $modifiedColumns[':p' . $index++]  = 'settings_global';
@@ -2330,32 +2351,11 @@ abstract class Report implements ActiveRecordInterface
         if ($this->isColumnModified(ReportTableMap::COL_SETTINGS_SYSTEM)) {
             $modifiedColumns[':p' . $index++]  = 'settings_system';
         }
-        if ($this->isColumnModified(ReportTableMap::COL_SHARED_PREFERENCES)) {
-            $modifiedColumns[':p' . $index++]  = 'shared_preferences';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_STACK_TRACE)) {
-            $modifiedColumns[':p' . $index++]  = 'stack_trace';
-        }
         if ($this->isColumnModified(ReportTableMap::COL_STACK_TRACE_HASH)) {
             $modifiedColumns[':p' . $index++]  = 'stack_trace_hash';
         }
         if ($this->isColumnModified(ReportTableMap::COL_THREAD_DETAILS)) {
             $modifiedColumns[':p' . $index++]  = 'thread_details';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_TOTAL_MEM_SIZE)) {
-            $modifiedColumns[':p' . $index++]  = 'total_mem_size';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_APP_START_DATE)) {
-            $modifiedColumns[':p' . $index++]  = 'user_app_start_date';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_COMMENT)) {
-            $modifiedColumns[':p' . $index++]  = 'user_comment';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_CRASH_DATE)) {
-            $modifiedColumns[':p' . $index++]  = 'user_crash_date';
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_EMAIL)) {
-            $modifiedColumns[':p' . $index++]  = 'user_email';
         }
 
         $sql = sprintf(
@@ -2371,11 +2371,11 @@ abstract class Report implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case 'android_version':
-                        $stmt->bindValue($identifier, $this->android_version, PDO::PARAM_STR);
+                    case 'installation_id':
+                        $stmt->bindValue($identifier, $this->installation_id, PDO::PARAM_STR);
                         break;
-                    case 'application_log':
-                        $stmt->bindValue($identifier, $this->application_log, PDO::PARAM_STR);
+                    case 'report_id':
+                        $stmt->bindValue($identifier, $this->report_id, PDO::PARAM_STR);
                         break;
                     case 'app_version_code':
                         $stmt->bindValue($identifier, $this->app_version_code, PDO::PARAM_STR);
@@ -2383,80 +2383,101 @@ abstract class Report implements ActiveRecordInterface
                     case 'app_version_name':
                         $stmt->bindValue($identifier, $this->app_version_name, PDO::PARAM_STR);
                         break;
-                    case 'available_mem_size':
-                        $stmt->bindValue($identifier, $this->available_mem_size, PDO::PARAM_STR);
-                        break;
-                    case 'brand':
-                        $stmt->bindValue($identifier, $this->brand, PDO::PARAM_STR);
-                        break;
-                    case 'build':
-                        $stmt->bindValue($identifier, $this->build, PDO::PARAM_STR);
-                        break;
-                    case 'build_config':
-                        $stmt->bindValue($identifier, $this->build_config, PDO::PARAM_STR);
-                        break;
-                    case 'crash_configuration':
-                        $stmt->bindValue($identifier, $this->crash_configuration, PDO::PARAM_STR);
-                        break;
-                    case 'custom_data':
-                        $stmt->bindValue($identifier, $this->custom_data, PDO::PARAM_STR);
-                        break;
-                    case 'date_received':
-                        $stmt->bindValue($identifier, $this->date_received ? $this->date_received->format("Y-m-d H:i:s.u") : null, PDO::PARAM_STR);
-                        break;
-                    case 'device_features':
-                        $stmt->bindValue($identifier, $this->device_features, PDO::PARAM_STR);
-                        break;
-                    case 'device_id':
-                        $stmt->bindValue($identifier, $this->device_id, PDO::PARAM_STR);
-                        break;
-                    case 'display':
-                        $stmt->bindValue($identifier, $this->display, PDO::PARAM_STR);
-                        break;
-                    case 'dropbox':
-                        $stmt->bindValue($identifier, $this->dropbox, PDO::PARAM_STR);
-                        break;
-                    case 'dumpsys_meminfo':
-                        $stmt->bindValue($identifier, $this->dumpsys_meminfo, PDO::PARAM_STR);
-                        break;
-                    case 'environment':
-                        $stmt->bindValue($identifier, $this->environment, PDO::PARAM_STR);
-                        break;
-                    case 'eventslog':
-                        $stmt->bindValue($identifier, $this->eventslog, PDO::PARAM_STR);
+                    case 'package_name':
+                        $stmt->bindValue($identifier, $this->package_name, PDO::PARAM_STR);
                         break;
                     case 'file_path':
                         $stmt->bindValue($identifier, $this->file_path, PDO::PARAM_STR);
                         break;
-                    case 'initial_configuration':
-                        $stmt->bindValue($identifier, $this->initial_configuration, PDO::PARAM_STR);
-                        break;
-                    case 'installation_id':
-                        $stmt->bindValue($identifier, $this->installation_id, PDO::PARAM_STR);
-                        break;
-                    case 'is_silent':
-                        $stmt->bindValue($identifier, $this->is_silent, PDO::PARAM_STR);
-                        break;
-                    case 'logcat':
-                        $stmt->bindValue($identifier, $this->logcat, PDO::PARAM_STR);
-                        break;
-                    case 'media_codec_list':
-                        $stmt->bindValue($identifier, $this->media_codec_list, PDO::PARAM_STR);
-                        break;
-                    case 'package_name':
-                        $stmt->bindValue($identifier, $this->package_name, PDO::PARAM_STR);
-                        break;
                     case 'phone_model':
                         $stmt->bindValue($identifier, $this->phone_model, PDO::PARAM_STR);
+                        break;
+                    case 'brand':
+                        $stmt->bindValue($identifier, $this->brand, PDO::PARAM_STR);
                         break;
                     case 'product':
                         $stmt->bindValue($identifier, $this->product, PDO::PARAM_STR);
                         break;
+                    case 'android_version':
+                        $stmt->bindValue($identifier, $this->android_version, PDO::PARAM_STR);
+                        break;
+                    case 'build':
+                        $stmt->bindValue($identifier, $this->build, PDO::PARAM_STR);
+                        break;
+                    case 'total_mem_size':
+                        $stmt->bindValue($identifier, $this->total_mem_size, PDO::PARAM_STR);
+                        break;
+                    case 'available_mem_size':
+                        $stmt->bindValue($identifier, $this->available_mem_size, PDO::PARAM_STR);
+                        break;
+                    case 'build_config':
+                        $stmt->bindValue($identifier, $this->build_config, PDO::PARAM_STR);
+                        break;
+                    case 'custom_data':
+                        $stmt->bindValue($identifier, $this->custom_data, PDO::PARAM_STR);
+                        break;
+                    case 'is_silent':
+                        $stmt->bindValue($identifier, $this->is_silent, PDO::PARAM_STR);
+                        break;
+                    case 'stack_trace':
+                        $stmt->bindValue($identifier, $this->stack_trace, PDO::PARAM_STR);
+                        break;
+                    case 'initial_configuration':
+                        $stmt->bindValue($identifier, $this->initial_configuration, PDO::PARAM_STR);
+                        break;
+                    case 'crash_configuration':
+                        $stmt->bindValue($identifier, $this->crash_configuration, PDO::PARAM_STR);
+                        break;
+                    case 'display':
+                        $stmt->bindValue($identifier, $this->display, PDO::PARAM_STR);
+                        break;
+                    case 'user_comment':
+                        $stmt->bindValue($identifier, $this->user_comment, PDO::PARAM_STR);
+                        break;
+                    case 'user_email':
+                        $stmt->bindValue($identifier, $this->user_email, PDO::PARAM_STR);
+                        break;
+                    case 'user_app_start_date':
+                        $stmt->bindValue($identifier, $this->user_app_start_date, PDO::PARAM_STR);
+                        break;
+                    case 'user_crash_date':
+                        $stmt->bindValue($identifier, $this->user_crash_date, PDO::PARAM_STR);
+                        break;
+                    case 'dumpsys_meminfo':
+                        $stmt->bindValue($identifier, $this->dumpsys_meminfo, PDO::PARAM_STR);
+                        break;
+                    case 'logcat':
+                        $stmt->bindValue($identifier, $this->logcat, PDO::PARAM_STR);
+                        break;
+                    case 'device_features':
+                        $stmt->bindValue($identifier, $this->device_features, PDO::PARAM_STR);
+                        break;
+                    case 'environment':
+                        $stmt->bindValue($identifier, $this->environment, PDO::PARAM_STR);
+                        break;
+                    case 'shared_preferences':
+                        $stmt->bindValue($identifier, $this->shared_preferences, PDO::PARAM_STR);
+                        break;
+                    case 'date_received':
+                        $stmt->bindValue($identifier, $this->date_received ? $this->date_received->format("Y-m-d H:i:s.u") : null, PDO::PARAM_STR);
+                        break;
+                    case 'application_log':
+                        $stmt->bindValue($identifier, $this->application_log, PDO::PARAM_STR);
+                        break;
+                    case 'device_id':
+                        $stmt->bindValue($identifier, $this->device_id, PDO::PARAM_STR);
+                        break;
+                    case 'dropbox':
+                        $stmt->bindValue($identifier, $this->dropbox, PDO::PARAM_STR);
+                        break;
+                    case 'eventslog':
+                        $stmt->bindValue($identifier, $this->eventslog, PDO::PARAM_STR);
+                        break;
+                    case 'media_codec_list':
+                        $stmt->bindValue($identifier, $this->media_codec_list, PDO::PARAM_STR);
+                        break;
                     case 'radiolog':
                         $stmt->bindValue($identifier, $this->radiolog, PDO::PARAM_STR);
-                        break;
-                    case 'report_id':
-                        $stmt->bindValue($identifier, $this->report_id, PDO::PARAM_STR);
                         break;
                     case 'settings_global':
                         $stmt->bindValue($identifier, $this->settings_global, PDO::PARAM_STR);
@@ -2467,32 +2488,11 @@ abstract class Report implements ActiveRecordInterface
                     case 'settings_system':
                         $stmt->bindValue($identifier, $this->settings_system, PDO::PARAM_STR);
                         break;
-                    case 'shared_preferences':
-                        $stmt->bindValue($identifier, $this->shared_preferences, PDO::PARAM_STR);
-                        break;
-                    case 'stack_trace':
-                        $stmt->bindValue($identifier, $this->stack_trace, PDO::PARAM_STR);
-                        break;
                     case 'stack_trace_hash':
                         $stmt->bindValue($identifier, $this->stack_trace_hash, PDO::PARAM_STR);
                         break;
                     case 'thread_details':
                         $stmt->bindValue($identifier, $this->thread_details, PDO::PARAM_STR);
-                        break;
-                    case 'total_mem_size':
-                        $stmt->bindValue($identifier, $this->total_mem_size, PDO::PARAM_STR);
-                        break;
-                    case 'user_app_start_date':
-                        $stmt->bindValue($identifier, $this->user_app_start_date, PDO::PARAM_STR);
-                        break;
-                    case 'user_comment':
-                        $stmt->bindValue($identifier, $this->user_comment, PDO::PARAM_STR);
-                        break;
-                    case 'user_crash_date':
-                        $stmt->bindValue($identifier, $this->user_crash_date, PDO::PARAM_STR);
-                        break;
-                    case 'user_email':
-                        $stmt->bindValue($identifier, $this->user_email, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -2560,10 +2560,10 @@ abstract class Report implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getAndroidVersion();
+                return $this->getInstallationId();
                 break;
             case 2:
-                return $this->getApplicationLog();
+                return $this->getReportId();
                 break;
             case 3:
                 return $this->getAppVersionCode();
@@ -2572,115 +2572,115 @@ abstract class Report implements ActiveRecordInterface
                 return $this->getAppVersionName();
                 break;
             case 5:
-                return $this->getAvailableMemSize();
-                break;
-            case 6:
-                return $this->getBrand();
-                break;
-            case 7:
-                return $this->getBuild();
-                break;
-            case 8:
-                return $this->getBuildConfig();
-                break;
-            case 9:
-                return $this->getCrashConfiguration();
-                break;
-            case 10:
-                return $this->getCustomData();
-                break;
-            case 11:
-                return $this->getDateReceived();
-                break;
-            case 12:
-                return $this->getDeviceFeatures();
-                break;
-            case 13:
-                return $this->getDeviceId();
-                break;
-            case 14:
-                return $this->getDisplay();
-                break;
-            case 15:
-                return $this->getDropbox();
-                break;
-            case 16:
-                return $this->getDumpsysMeminfo();
-                break;
-            case 17:
-                return $this->getEnvironment();
-                break;
-            case 18:
-                return $this->getEventslog();
-                break;
-            case 19:
-                return $this->getFilePath();
-                break;
-            case 20:
-                return $this->getInitialConfiguration();
-                break;
-            case 21:
-                return $this->getInstallationId();
-                break;
-            case 22:
-                return $this->getIsSilent();
-                break;
-            case 23:
-                return $this->getLogcat();
-                break;
-            case 24:
-                return $this->getMediaCodecList();
-                break;
-            case 25:
                 return $this->getPackageName();
                 break;
-            case 26:
+            case 6:
+                return $this->getFilePath();
+                break;
+            case 7:
                 return $this->getPhoneModel();
                 break;
-            case 27:
+            case 8:
+                return $this->getBrand();
+                break;
+            case 9:
                 return $this->getProduct();
                 break;
-            case 28:
-                return $this->getRadiolog();
+            case 10:
+                return $this->getAndroidVersion();
                 break;
-            case 29:
-                return $this->getReportId();
+            case 11:
+                return $this->getBuild();
                 break;
-            case 30:
-                return $this->getSettingsGlobal();
-                break;
-            case 31:
-                return $this->getSettingsSecure();
-                break;
-            case 32:
-                return $this->getSettingsSystem();
-                break;
-            case 33:
-                return $this->getSharedPreferences();
-                break;
-            case 34:
-                return $this->getStackTrace();
-                break;
-            case 35:
-                return $this->getStackTraceHash();
-                break;
-            case 36:
-                return $this->getThreadDetails();
-                break;
-            case 37:
+            case 12:
                 return $this->getTotalMemSize();
                 break;
-            case 38:
-                return $this->getUserAppStartDate();
+            case 13:
+                return $this->getAvailableMemSize();
                 break;
-            case 39:
+            case 14:
+                return $this->getBuildConfig();
+                break;
+            case 15:
+                return $this->getCustomData();
+                break;
+            case 16:
+                return $this->getIsSilent();
+                break;
+            case 17:
+                return $this->getStackTrace();
+                break;
+            case 18:
+                return $this->getInitialConfiguration();
+                break;
+            case 19:
+                return $this->getCrashConfiguration();
+                break;
+            case 20:
+                return $this->getDisplay();
+                break;
+            case 21:
                 return $this->getUserComment();
                 break;
-            case 40:
+            case 22:
+                return $this->getUserEmail();
+                break;
+            case 23:
+                return $this->getUserAppStartDate();
+                break;
+            case 24:
                 return $this->getUserCrashDate();
                 break;
+            case 25:
+                return $this->getDumpsysMeminfo();
+                break;
+            case 26:
+                return $this->getLogcat();
+                break;
+            case 27:
+                return $this->getDeviceFeatures();
+                break;
+            case 28:
+                return $this->getEnvironment();
+                break;
+            case 29:
+                return $this->getSharedPreferences();
+                break;
+            case 30:
+                return $this->getDateReceived();
+                break;
+            case 31:
+                return $this->getApplicationLog();
+                break;
+            case 32:
+                return $this->getDeviceId();
+                break;
+            case 33:
+                return $this->getDropbox();
+                break;
+            case 34:
+                return $this->getEventslog();
+                break;
+            case 35:
+                return $this->getMediaCodecList();
+                break;
+            case 36:
+                return $this->getRadiolog();
+                break;
+            case 37:
+                return $this->getSettingsGlobal();
+                break;
+            case 38:
+                return $this->getSettingsSecure();
+                break;
+            case 39:
+                return $this->getSettingsSystem();
+                break;
+            case 40:
+                return $this->getStackTraceHash();
+                break;
             case 41:
-                return $this->getUserEmail();
+                return $this->getThreadDetails();
                 break;
             default:
                 return null;
@@ -2712,50 +2712,50 @@ abstract class Report implements ActiveRecordInterface
         $keys = ReportTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getAndroidVersion(),
-            $keys[2] => $this->getApplicationLog(),
+            $keys[1] => $this->getInstallationId(),
+            $keys[2] => $this->getReportId(),
             $keys[3] => $this->getAppVersionCode(),
             $keys[4] => $this->getAppVersionName(),
-            $keys[5] => $this->getAvailableMemSize(),
-            $keys[6] => $this->getBrand(),
-            $keys[7] => $this->getBuild(),
-            $keys[8] => $this->getBuildConfig(),
-            $keys[9] => $this->getCrashConfiguration(),
-            $keys[10] => $this->getCustomData(),
-            $keys[11] => $this->getDateReceived(),
-            $keys[12] => $this->getDeviceFeatures(),
-            $keys[13] => $this->getDeviceId(),
-            $keys[14] => $this->getDisplay(),
-            $keys[15] => $this->getDropbox(),
-            $keys[16] => $this->getDumpsysMeminfo(),
-            $keys[17] => $this->getEnvironment(),
-            $keys[18] => $this->getEventslog(),
-            $keys[19] => $this->getFilePath(),
-            $keys[20] => $this->getInitialConfiguration(),
-            $keys[21] => $this->getInstallationId(),
-            $keys[22] => $this->getIsSilent(),
-            $keys[23] => $this->getLogcat(),
-            $keys[24] => $this->getMediaCodecList(),
-            $keys[25] => $this->getPackageName(),
-            $keys[26] => $this->getPhoneModel(),
-            $keys[27] => $this->getProduct(),
-            $keys[28] => $this->getRadiolog(),
-            $keys[29] => $this->getReportId(),
-            $keys[30] => $this->getSettingsGlobal(),
-            $keys[31] => $this->getSettingsSecure(),
-            $keys[32] => $this->getSettingsSystem(),
-            $keys[33] => $this->getSharedPreferences(),
-            $keys[34] => $this->getStackTrace(),
-            $keys[35] => $this->getStackTraceHash(),
-            $keys[36] => $this->getThreadDetails(),
-            $keys[37] => $this->getTotalMemSize(),
-            $keys[38] => $this->getUserAppStartDate(),
-            $keys[39] => $this->getUserComment(),
-            $keys[40] => $this->getUserCrashDate(),
-            $keys[41] => $this->getUserEmail(),
+            $keys[5] => $this->getPackageName(),
+            $keys[6] => $this->getFilePath(),
+            $keys[7] => $this->getPhoneModel(),
+            $keys[8] => $this->getBrand(),
+            $keys[9] => $this->getProduct(),
+            $keys[10] => $this->getAndroidVersion(),
+            $keys[11] => $this->getBuild(),
+            $keys[12] => $this->getTotalMemSize(),
+            $keys[13] => $this->getAvailableMemSize(),
+            $keys[14] => $this->getBuildConfig(),
+            $keys[15] => $this->getCustomData(),
+            $keys[16] => $this->getIsSilent(),
+            $keys[17] => $this->getStackTrace(),
+            $keys[18] => $this->getInitialConfiguration(),
+            $keys[19] => $this->getCrashConfiguration(),
+            $keys[20] => $this->getDisplay(),
+            $keys[21] => $this->getUserComment(),
+            $keys[22] => $this->getUserEmail(),
+            $keys[23] => $this->getUserAppStartDate(),
+            $keys[24] => $this->getUserCrashDate(),
+            $keys[25] => $this->getDumpsysMeminfo(),
+            $keys[26] => $this->getLogcat(),
+            $keys[27] => $this->getDeviceFeatures(),
+            $keys[28] => $this->getEnvironment(),
+            $keys[29] => $this->getSharedPreferences(),
+            $keys[30] => $this->getDateReceived(),
+            $keys[31] => $this->getApplicationLog(),
+            $keys[32] => $this->getDeviceId(),
+            $keys[33] => $this->getDropbox(),
+            $keys[34] => $this->getEventslog(),
+            $keys[35] => $this->getMediaCodecList(),
+            $keys[36] => $this->getRadiolog(),
+            $keys[37] => $this->getSettingsGlobal(),
+            $keys[38] => $this->getSettingsSecure(),
+            $keys[39] => $this->getSettingsSystem(),
+            $keys[40] => $this->getStackTraceHash(),
+            $keys[41] => $this->getThreadDetails(),
         );
-        if ($result[$keys[11]] instanceof \DateTimeInterface) {
-            $result[$keys[11]] = $result[$keys[11]]->format('c');
+        if ($result[$keys[30]] instanceof \DateTimeInterface) {
+            $result[$keys[30]] = $result[$keys[30]]->format('c');
         }
 
         $virtualColumns = $this->virtualColumns;
@@ -2800,10 +2800,10 @@ abstract class Report implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setAndroidVersion($value);
+                $this->setInstallationId($value);
                 break;
             case 2:
-                $this->setApplicationLog($value);
+                $this->setReportId($value);
                 break;
             case 3:
                 $this->setAppVersionCode($value);
@@ -2812,115 +2812,115 @@ abstract class Report implements ActiveRecordInterface
                 $this->setAppVersionName($value);
                 break;
             case 5:
-                $this->setAvailableMemSize($value);
-                break;
-            case 6:
-                $this->setBrand($value);
-                break;
-            case 7:
-                $this->setBuild($value);
-                break;
-            case 8:
-                $this->setBuildConfig($value);
-                break;
-            case 9:
-                $this->setCrashConfiguration($value);
-                break;
-            case 10:
-                $this->setCustomData($value);
-                break;
-            case 11:
-                $this->setDateReceived($value);
-                break;
-            case 12:
-                $this->setDeviceFeatures($value);
-                break;
-            case 13:
-                $this->setDeviceId($value);
-                break;
-            case 14:
-                $this->setDisplay($value);
-                break;
-            case 15:
-                $this->setDropbox($value);
-                break;
-            case 16:
-                $this->setDumpsysMeminfo($value);
-                break;
-            case 17:
-                $this->setEnvironment($value);
-                break;
-            case 18:
-                $this->setEventslog($value);
-                break;
-            case 19:
-                $this->setFilePath($value);
-                break;
-            case 20:
-                $this->setInitialConfiguration($value);
-                break;
-            case 21:
-                $this->setInstallationId($value);
-                break;
-            case 22:
-                $this->setIsSilent($value);
-                break;
-            case 23:
-                $this->setLogcat($value);
-                break;
-            case 24:
-                $this->setMediaCodecList($value);
-                break;
-            case 25:
                 $this->setPackageName($value);
                 break;
-            case 26:
+            case 6:
+                $this->setFilePath($value);
+                break;
+            case 7:
                 $this->setPhoneModel($value);
                 break;
-            case 27:
+            case 8:
+                $this->setBrand($value);
+                break;
+            case 9:
                 $this->setProduct($value);
                 break;
-            case 28:
-                $this->setRadiolog($value);
+            case 10:
+                $this->setAndroidVersion($value);
                 break;
-            case 29:
-                $this->setReportId($value);
+            case 11:
+                $this->setBuild($value);
                 break;
-            case 30:
-                $this->setSettingsGlobal($value);
-                break;
-            case 31:
-                $this->setSettingsSecure($value);
-                break;
-            case 32:
-                $this->setSettingsSystem($value);
-                break;
-            case 33:
-                $this->setSharedPreferences($value);
-                break;
-            case 34:
-                $this->setStackTrace($value);
-                break;
-            case 35:
-                $this->setStackTraceHash($value);
-                break;
-            case 36:
-                $this->setThreadDetails($value);
-                break;
-            case 37:
+            case 12:
                 $this->setTotalMemSize($value);
                 break;
-            case 38:
-                $this->setUserAppStartDate($value);
+            case 13:
+                $this->setAvailableMemSize($value);
                 break;
-            case 39:
+            case 14:
+                $this->setBuildConfig($value);
+                break;
+            case 15:
+                $this->setCustomData($value);
+                break;
+            case 16:
+                $this->setIsSilent($value);
+                break;
+            case 17:
+                $this->setStackTrace($value);
+                break;
+            case 18:
+                $this->setInitialConfiguration($value);
+                break;
+            case 19:
+                $this->setCrashConfiguration($value);
+                break;
+            case 20:
+                $this->setDisplay($value);
+                break;
+            case 21:
                 $this->setUserComment($value);
                 break;
-            case 40:
+            case 22:
+                $this->setUserEmail($value);
+                break;
+            case 23:
+                $this->setUserAppStartDate($value);
+                break;
+            case 24:
                 $this->setUserCrashDate($value);
                 break;
+            case 25:
+                $this->setDumpsysMeminfo($value);
+                break;
+            case 26:
+                $this->setLogcat($value);
+                break;
+            case 27:
+                $this->setDeviceFeatures($value);
+                break;
+            case 28:
+                $this->setEnvironment($value);
+                break;
+            case 29:
+                $this->setSharedPreferences($value);
+                break;
+            case 30:
+                $this->setDateReceived($value);
+                break;
+            case 31:
+                $this->setApplicationLog($value);
+                break;
+            case 32:
+                $this->setDeviceId($value);
+                break;
+            case 33:
+                $this->setDropbox($value);
+                break;
+            case 34:
+                $this->setEventslog($value);
+                break;
+            case 35:
+                $this->setMediaCodecList($value);
+                break;
+            case 36:
+                $this->setRadiolog($value);
+                break;
+            case 37:
+                $this->setSettingsGlobal($value);
+                break;
+            case 38:
+                $this->setSettingsSecure($value);
+                break;
+            case 39:
+                $this->setSettingsSystem($value);
+                break;
+            case 40:
+                $this->setStackTraceHash($value);
+                break;
             case 41:
-                $this->setUserEmail($value);
+                $this->setThreadDetails($value);
                 break;
         } // switch()
 
@@ -2952,10 +2952,10 @@ abstract class Report implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setAndroidVersion($arr[$keys[1]]);
+            $this->setInstallationId($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
-            $this->setApplicationLog($arr[$keys[2]]);
+            $this->setReportId($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
             $this->setAppVersionCode($arr[$keys[3]]);
@@ -2964,115 +2964,115 @@ abstract class Report implements ActiveRecordInterface
             $this->setAppVersionName($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setAvailableMemSize($arr[$keys[5]]);
+            $this->setPackageName($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setBrand($arr[$keys[6]]);
+            $this->setFilePath($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setBuild($arr[$keys[7]]);
+            $this->setPhoneModel($arr[$keys[7]]);
         }
         if (array_key_exists($keys[8], $arr)) {
-            $this->setBuildConfig($arr[$keys[8]]);
+            $this->setBrand($arr[$keys[8]]);
         }
         if (array_key_exists($keys[9], $arr)) {
-            $this->setCrashConfiguration($arr[$keys[9]]);
+            $this->setProduct($arr[$keys[9]]);
         }
         if (array_key_exists($keys[10], $arr)) {
-            $this->setCustomData($arr[$keys[10]]);
+            $this->setAndroidVersion($arr[$keys[10]]);
         }
         if (array_key_exists($keys[11], $arr)) {
-            $this->setDateReceived($arr[$keys[11]]);
+            $this->setBuild($arr[$keys[11]]);
         }
         if (array_key_exists($keys[12], $arr)) {
-            $this->setDeviceFeatures($arr[$keys[12]]);
+            $this->setTotalMemSize($arr[$keys[12]]);
         }
         if (array_key_exists($keys[13], $arr)) {
-            $this->setDeviceId($arr[$keys[13]]);
+            $this->setAvailableMemSize($arr[$keys[13]]);
         }
         if (array_key_exists($keys[14], $arr)) {
-            $this->setDisplay($arr[$keys[14]]);
+            $this->setBuildConfig($arr[$keys[14]]);
         }
         if (array_key_exists($keys[15], $arr)) {
-            $this->setDropbox($arr[$keys[15]]);
+            $this->setCustomData($arr[$keys[15]]);
         }
         if (array_key_exists($keys[16], $arr)) {
-            $this->setDumpsysMeminfo($arr[$keys[16]]);
+            $this->setIsSilent($arr[$keys[16]]);
         }
         if (array_key_exists($keys[17], $arr)) {
-            $this->setEnvironment($arr[$keys[17]]);
+            $this->setStackTrace($arr[$keys[17]]);
         }
         if (array_key_exists($keys[18], $arr)) {
-            $this->setEventslog($arr[$keys[18]]);
+            $this->setInitialConfiguration($arr[$keys[18]]);
         }
         if (array_key_exists($keys[19], $arr)) {
-            $this->setFilePath($arr[$keys[19]]);
+            $this->setCrashConfiguration($arr[$keys[19]]);
         }
         if (array_key_exists($keys[20], $arr)) {
-            $this->setInitialConfiguration($arr[$keys[20]]);
+            $this->setDisplay($arr[$keys[20]]);
         }
         if (array_key_exists($keys[21], $arr)) {
-            $this->setInstallationId($arr[$keys[21]]);
+            $this->setUserComment($arr[$keys[21]]);
         }
         if (array_key_exists($keys[22], $arr)) {
-            $this->setIsSilent($arr[$keys[22]]);
+            $this->setUserEmail($arr[$keys[22]]);
         }
         if (array_key_exists($keys[23], $arr)) {
-            $this->setLogcat($arr[$keys[23]]);
+            $this->setUserAppStartDate($arr[$keys[23]]);
         }
         if (array_key_exists($keys[24], $arr)) {
-            $this->setMediaCodecList($arr[$keys[24]]);
+            $this->setUserCrashDate($arr[$keys[24]]);
         }
         if (array_key_exists($keys[25], $arr)) {
-            $this->setPackageName($arr[$keys[25]]);
+            $this->setDumpsysMeminfo($arr[$keys[25]]);
         }
         if (array_key_exists($keys[26], $arr)) {
-            $this->setPhoneModel($arr[$keys[26]]);
+            $this->setLogcat($arr[$keys[26]]);
         }
         if (array_key_exists($keys[27], $arr)) {
-            $this->setProduct($arr[$keys[27]]);
+            $this->setDeviceFeatures($arr[$keys[27]]);
         }
         if (array_key_exists($keys[28], $arr)) {
-            $this->setRadiolog($arr[$keys[28]]);
+            $this->setEnvironment($arr[$keys[28]]);
         }
         if (array_key_exists($keys[29], $arr)) {
-            $this->setReportId($arr[$keys[29]]);
+            $this->setSharedPreferences($arr[$keys[29]]);
         }
         if (array_key_exists($keys[30], $arr)) {
-            $this->setSettingsGlobal($arr[$keys[30]]);
+            $this->setDateReceived($arr[$keys[30]]);
         }
         if (array_key_exists($keys[31], $arr)) {
-            $this->setSettingsSecure($arr[$keys[31]]);
+            $this->setApplicationLog($arr[$keys[31]]);
         }
         if (array_key_exists($keys[32], $arr)) {
-            $this->setSettingsSystem($arr[$keys[32]]);
+            $this->setDeviceId($arr[$keys[32]]);
         }
         if (array_key_exists($keys[33], $arr)) {
-            $this->setSharedPreferences($arr[$keys[33]]);
+            $this->setDropbox($arr[$keys[33]]);
         }
         if (array_key_exists($keys[34], $arr)) {
-            $this->setStackTrace($arr[$keys[34]]);
+            $this->setEventslog($arr[$keys[34]]);
         }
         if (array_key_exists($keys[35], $arr)) {
-            $this->setStackTraceHash($arr[$keys[35]]);
+            $this->setMediaCodecList($arr[$keys[35]]);
         }
         if (array_key_exists($keys[36], $arr)) {
-            $this->setThreadDetails($arr[$keys[36]]);
+            $this->setRadiolog($arr[$keys[36]]);
         }
         if (array_key_exists($keys[37], $arr)) {
-            $this->setTotalMemSize($arr[$keys[37]]);
+            $this->setSettingsGlobal($arr[$keys[37]]);
         }
         if (array_key_exists($keys[38], $arr)) {
-            $this->setUserAppStartDate($arr[$keys[38]]);
+            $this->setSettingsSecure($arr[$keys[38]]);
         }
         if (array_key_exists($keys[39], $arr)) {
-            $this->setUserComment($arr[$keys[39]]);
+            $this->setSettingsSystem($arr[$keys[39]]);
         }
         if (array_key_exists($keys[40], $arr)) {
-            $this->setUserCrashDate($arr[$keys[40]]);
+            $this->setStackTraceHash($arr[$keys[40]]);
         }
         if (array_key_exists($keys[41], $arr)) {
-            $this->setUserEmail($arr[$keys[41]]);
+            $this->setThreadDetails($arr[$keys[41]]);
         }
     }
 
@@ -3118,11 +3118,11 @@ abstract class Report implements ActiveRecordInterface
         if ($this->isColumnModified(ReportTableMap::COL_ID)) {
             $criteria->add(ReportTableMap::COL_ID, $this->id);
         }
-        if ($this->isColumnModified(ReportTableMap::COL_ANDROID_VERSION)) {
-            $criteria->add(ReportTableMap::COL_ANDROID_VERSION, $this->android_version);
+        if ($this->isColumnModified(ReportTableMap::COL_INSTALLATION_ID)) {
+            $criteria->add(ReportTableMap::COL_INSTALLATION_ID, $this->installation_id);
         }
-        if ($this->isColumnModified(ReportTableMap::COL_APPLICATION_LOG)) {
-            $criteria->add(ReportTableMap::COL_APPLICATION_LOG, $this->application_log);
+        if ($this->isColumnModified(ReportTableMap::COL_REPORT_ID)) {
+            $criteria->add(ReportTableMap::COL_REPORT_ID, $this->report_id);
         }
         if ($this->isColumnModified(ReportTableMap::COL_APP_VERSION_CODE)) {
             $criteria->add(ReportTableMap::COL_APP_VERSION_CODE, $this->app_version_code);
@@ -3130,80 +3130,101 @@ abstract class Report implements ActiveRecordInterface
         if ($this->isColumnModified(ReportTableMap::COL_APP_VERSION_NAME)) {
             $criteria->add(ReportTableMap::COL_APP_VERSION_NAME, $this->app_version_name);
         }
-        if ($this->isColumnModified(ReportTableMap::COL_AVAILABLE_MEM_SIZE)) {
-            $criteria->add(ReportTableMap::COL_AVAILABLE_MEM_SIZE, $this->available_mem_size);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_BRAND)) {
-            $criteria->add(ReportTableMap::COL_BRAND, $this->brand);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_BUILD)) {
-            $criteria->add(ReportTableMap::COL_BUILD, $this->build);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_BUILD_CONFIG)) {
-            $criteria->add(ReportTableMap::COL_BUILD_CONFIG, $this->build_config);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_CRASH_CONFIGURATION)) {
-            $criteria->add(ReportTableMap::COL_CRASH_CONFIGURATION, $this->crash_configuration);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_CUSTOM_DATA)) {
-            $criteria->add(ReportTableMap::COL_CUSTOM_DATA, $this->custom_data);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DATE_RECEIVED)) {
-            $criteria->add(ReportTableMap::COL_DATE_RECEIVED, $this->date_received);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_FEATURES)) {
-            $criteria->add(ReportTableMap::COL_DEVICE_FEATURES, $this->device_features);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_ID)) {
-            $criteria->add(ReportTableMap::COL_DEVICE_ID, $this->device_id);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DISPLAY)) {
-            $criteria->add(ReportTableMap::COL_DISPLAY, $this->display);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DROPBOX)) {
-            $criteria->add(ReportTableMap::COL_DROPBOX, $this->dropbox);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_DUMPSYS_MEMINFO)) {
-            $criteria->add(ReportTableMap::COL_DUMPSYS_MEMINFO, $this->dumpsys_meminfo);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_ENVIRONMENT)) {
-            $criteria->add(ReportTableMap::COL_ENVIRONMENT, $this->environment);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_EVENTSLOG)) {
-            $criteria->add(ReportTableMap::COL_EVENTSLOG, $this->eventslog);
+        if ($this->isColumnModified(ReportTableMap::COL_PACKAGE_NAME)) {
+            $criteria->add(ReportTableMap::COL_PACKAGE_NAME, $this->package_name);
         }
         if ($this->isColumnModified(ReportTableMap::COL_FILE_PATH)) {
             $criteria->add(ReportTableMap::COL_FILE_PATH, $this->file_path);
         }
-        if ($this->isColumnModified(ReportTableMap::COL_INITIAL_CONFIGURATION)) {
-            $criteria->add(ReportTableMap::COL_INITIAL_CONFIGURATION, $this->initial_configuration);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_INSTALLATION_ID)) {
-            $criteria->add(ReportTableMap::COL_INSTALLATION_ID, $this->installation_id);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_IS_SILENT)) {
-            $criteria->add(ReportTableMap::COL_IS_SILENT, $this->is_silent);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_LOGCAT)) {
-            $criteria->add(ReportTableMap::COL_LOGCAT, $this->logcat);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_MEDIA_CODEC_LIST)) {
-            $criteria->add(ReportTableMap::COL_MEDIA_CODEC_LIST, $this->media_codec_list);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_PACKAGE_NAME)) {
-            $criteria->add(ReportTableMap::COL_PACKAGE_NAME, $this->package_name);
-        }
         if ($this->isColumnModified(ReportTableMap::COL_PHONE_MODEL)) {
             $criteria->add(ReportTableMap::COL_PHONE_MODEL, $this->phone_model);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_BRAND)) {
+            $criteria->add(ReportTableMap::COL_BRAND, $this->brand);
         }
         if ($this->isColumnModified(ReportTableMap::COL_PRODUCT)) {
             $criteria->add(ReportTableMap::COL_PRODUCT, $this->product);
         }
+        if ($this->isColumnModified(ReportTableMap::COL_ANDROID_VERSION)) {
+            $criteria->add(ReportTableMap::COL_ANDROID_VERSION, $this->android_version);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_BUILD)) {
+            $criteria->add(ReportTableMap::COL_BUILD, $this->build);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_TOTAL_MEM_SIZE)) {
+            $criteria->add(ReportTableMap::COL_TOTAL_MEM_SIZE, $this->total_mem_size);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_AVAILABLE_MEM_SIZE)) {
+            $criteria->add(ReportTableMap::COL_AVAILABLE_MEM_SIZE, $this->available_mem_size);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_BUILD_CONFIG)) {
+            $criteria->add(ReportTableMap::COL_BUILD_CONFIG, $this->build_config);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_CUSTOM_DATA)) {
+            $criteria->add(ReportTableMap::COL_CUSTOM_DATA, $this->custom_data);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_IS_SILENT)) {
+            $criteria->add(ReportTableMap::COL_IS_SILENT, $this->is_silent);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_STACK_TRACE)) {
+            $criteria->add(ReportTableMap::COL_STACK_TRACE, $this->stack_trace);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_INITIAL_CONFIGURATION)) {
+            $criteria->add(ReportTableMap::COL_INITIAL_CONFIGURATION, $this->initial_configuration);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_CRASH_CONFIGURATION)) {
+            $criteria->add(ReportTableMap::COL_CRASH_CONFIGURATION, $this->crash_configuration);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DISPLAY)) {
+            $criteria->add(ReportTableMap::COL_DISPLAY, $this->display);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_COMMENT)) {
+            $criteria->add(ReportTableMap::COL_USER_COMMENT, $this->user_comment);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_EMAIL)) {
+            $criteria->add(ReportTableMap::COL_USER_EMAIL, $this->user_email);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_APP_START_DATE)) {
+            $criteria->add(ReportTableMap::COL_USER_APP_START_DATE, $this->user_app_start_date);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_USER_CRASH_DATE)) {
+            $criteria->add(ReportTableMap::COL_USER_CRASH_DATE, $this->user_crash_date);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DUMPSYS_MEMINFO)) {
+            $criteria->add(ReportTableMap::COL_DUMPSYS_MEMINFO, $this->dumpsys_meminfo);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_LOGCAT)) {
+            $criteria->add(ReportTableMap::COL_LOGCAT, $this->logcat);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_FEATURES)) {
+            $criteria->add(ReportTableMap::COL_DEVICE_FEATURES, $this->device_features);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_ENVIRONMENT)) {
+            $criteria->add(ReportTableMap::COL_ENVIRONMENT, $this->environment);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_SHARED_PREFERENCES)) {
+            $criteria->add(ReportTableMap::COL_SHARED_PREFERENCES, $this->shared_preferences);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DATE_RECEIVED)) {
+            $criteria->add(ReportTableMap::COL_DATE_RECEIVED, $this->date_received);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_APPLICATION_LOG)) {
+            $criteria->add(ReportTableMap::COL_APPLICATION_LOG, $this->application_log);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DEVICE_ID)) {
+            $criteria->add(ReportTableMap::COL_DEVICE_ID, $this->device_id);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_DROPBOX)) {
+            $criteria->add(ReportTableMap::COL_DROPBOX, $this->dropbox);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_EVENTSLOG)) {
+            $criteria->add(ReportTableMap::COL_EVENTSLOG, $this->eventslog);
+        }
+        if ($this->isColumnModified(ReportTableMap::COL_MEDIA_CODEC_LIST)) {
+            $criteria->add(ReportTableMap::COL_MEDIA_CODEC_LIST, $this->media_codec_list);
+        }
         if ($this->isColumnModified(ReportTableMap::COL_RADIOLOG)) {
             $criteria->add(ReportTableMap::COL_RADIOLOG, $this->radiolog);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_REPORT_ID)) {
-            $criteria->add(ReportTableMap::COL_REPORT_ID, $this->report_id);
         }
         if ($this->isColumnModified(ReportTableMap::COL_SETTINGS_GLOBAL)) {
             $criteria->add(ReportTableMap::COL_SETTINGS_GLOBAL, $this->settings_global);
@@ -3214,32 +3235,11 @@ abstract class Report implements ActiveRecordInterface
         if ($this->isColumnModified(ReportTableMap::COL_SETTINGS_SYSTEM)) {
             $criteria->add(ReportTableMap::COL_SETTINGS_SYSTEM, $this->settings_system);
         }
-        if ($this->isColumnModified(ReportTableMap::COL_SHARED_PREFERENCES)) {
-            $criteria->add(ReportTableMap::COL_SHARED_PREFERENCES, $this->shared_preferences);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_STACK_TRACE)) {
-            $criteria->add(ReportTableMap::COL_STACK_TRACE, $this->stack_trace);
-        }
         if ($this->isColumnModified(ReportTableMap::COL_STACK_TRACE_HASH)) {
             $criteria->add(ReportTableMap::COL_STACK_TRACE_HASH, $this->stack_trace_hash);
         }
         if ($this->isColumnModified(ReportTableMap::COL_THREAD_DETAILS)) {
             $criteria->add(ReportTableMap::COL_THREAD_DETAILS, $this->thread_details);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_TOTAL_MEM_SIZE)) {
-            $criteria->add(ReportTableMap::COL_TOTAL_MEM_SIZE, $this->total_mem_size);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_APP_START_DATE)) {
-            $criteria->add(ReportTableMap::COL_USER_APP_START_DATE, $this->user_app_start_date);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_COMMENT)) {
-            $criteria->add(ReportTableMap::COL_USER_COMMENT, $this->user_comment);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_CRASH_DATE)) {
-            $criteria->add(ReportTableMap::COL_USER_CRASH_DATE, $this->user_crash_date);
-        }
-        if ($this->isColumnModified(ReportTableMap::COL_USER_EMAIL)) {
-            $criteria->add(ReportTableMap::COL_USER_EMAIL, $this->user_email);
         }
 
         return $criteria;
@@ -3327,47 +3327,47 @@ abstract class Report implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setAndroidVersion($this->getAndroidVersion());
-        $copyObj->setApplicationLog($this->getApplicationLog());
+        $copyObj->setInstallationId($this->getInstallationId());
+        $copyObj->setReportId($this->getReportId());
         $copyObj->setAppVersionCode($this->getAppVersionCode());
         $copyObj->setAppVersionName($this->getAppVersionName());
-        $copyObj->setAvailableMemSize($this->getAvailableMemSize());
-        $copyObj->setBrand($this->getBrand());
-        $copyObj->setBuild($this->getBuild());
-        $copyObj->setBuildConfig($this->getBuildConfig());
-        $copyObj->setCrashConfiguration($this->getCrashConfiguration());
-        $copyObj->setCustomData($this->getCustomData());
-        $copyObj->setDateReceived($this->getDateReceived());
-        $copyObj->setDeviceFeatures($this->getDeviceFeatures());
-        $copyObj->setDeviceId($this->getDeviceId());
-        $copyObj->setDisplay($this->getDisplay());
-        $copyObj->setDropbox($this->getDropbox());
-        $copyObj->setDumpsysMeminfo($this->getDumpsysMeminfo());
-        $copyObj->setEnvironment($this->getEnvironment());
-        $copyObj->setEventslog($this->getEventslog());
-        $copyObj->setFilePath($this->getFilePath());
-        $copyObj->setInitialConfiguration($this->getInitialConfiguration());
-        $copyObj->setInstallationId($this->getInstallationId());
-        $copyObj->setIsSilent($this->getIsSilent());
-        $copyObj->setLogcat($this->getLogcat());
-        $copyObj->setMediaCodecList($this->getMediaCodecList());
         $copyObj->setPackageName($this->getPackageName());
+        $copyObj->setFilePath($this->getFilePath());
         $copyObj->setPhoneModel($this->getPhoneModel());
+        $copyObj->setBrand($this->getBrand());
         $copyObj->setProduct($this->getProduct());
+        $copyObj->setAndroidVersion($this->getAndroidVersion());
+        $copyObj->setBuild($this->getBuild());
+        $copyObj->setTotalMemSize($this->getTotalMemSize());
+        $copyObj->setAvailableMemSize($this->getAvailableMemSize());
+        $copyObj->setBuildConfig($this->getBuildConfig());
+        $copyObj->setCustomData($this->getCustomData());
+        $copyObj->setIsSilent($this->getIsSilent());
+        $copyObj->setStackTrace($this->getStackTrace());
+        $copyObj->setInitialConfiguration($this->getInitialConfiguration());
+        $copyObj->setCrashConfiguration($this->getCrashConfiguration());
+        $copyObj->setDisplay($this->getDisplay());
+        $copyObj->setUserComment($this->getUserComment());
+        $copyObj->setUserEmail($this->getUserEmail());
+        $copyObj->setUserAppStartDate($this->getUserAppStartDate());
+        $copyObj->setUserCrashDate($this->getUserCrashDate());
+        $copyObj->setDumpsysMeminfo($this->getDumpsysMeminfo());
+        $copyObj->setLogcat($this->getLogcat());
+        $copyObj->setDeviceFeatures($this->getDeviceFeatures());
+        $copyObj->setEnvironment($this->getEnvironment());
+        $copyObj->setSharedPreferences($this->getSharedPreferences());
+        $copyObj->setDateReceived($this->getDateReceived());
+        $copyObj->setApplicationLog($this->getApplicationLog());
+        $copyObj->setDeviceId($this->getDeviceId());
+        $copyObj->setDropbox($this->getDropbox());
+        $copyObj->setEventslog($this->getEventslog());
+        $copyObj->setMediaCodecList($this->getMediaCodecList());
         $copyObj->setRadiolog($this->getRadiolog());
-        $copyObj->setReportId($this->getReportId());
         $copyObj->setSettingsGlobal($this->getSettingsGlobal());
         $copyObj->setSettingsSecure($this->getSettingsSecure());
         $copyObj->setSettingsSystem($this->getSettingsSystem());
-        $copyObj->setSharedPreferences($this->getSharedPreferences());
-        $copyObj->setStackTrace($this->getStackTrace());
         $copyObj->setStackTraceHash($this->getStackTraceHash());
         $copyObj->setThreadDetails($this->getThreadDetails());
-        $copyObj->setTotalMemSize($this->getTotalMemSize());
-        $copyObj->setUserAppStartDate($this->getUserAppStartDate());
-        $copyObj->setUserComment($this->getUserComment());
-        $copyObj->setUserCrashDate($this->getUserCrashDate());
-        $copyObj->setUserEmail($this->getUserEmail());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -3404,47 +3404,47 @@ abstract class Report implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
-        $this->android_version = null;
-        $this->application_log = null;
+        $this->installation_id = null;
+        $this->report_id = null;
         $this->app_version_code = null;
         $this->app_version_name = null;
-        $this->available_mem_size = null;
-        $this->brand = null;
-        $this->build = null;
-        $this->build_config = null;
-        $this->crash_configuration = null;
-        $this->custom_data = null;
-        $this->date_received = null;
-        $this->device_features = null;
-        $this->device_id = null;
-        $this->display = null;
-        $this->dropbox = null;
-        $this->dumpsys_meminfo = null;
-        $this->environment = null;
-        $this->eventslog = null;
-        $this->file_path = null;
-        $this->initial_configuration = null;
-        $this->installation_id = null;
-        $this->is_silent = null;
-        $this->logcat = null;
-        $this->media_codec_list = null;
         $this->package_name = null;
+        $this->file_path = null;
         $this->phone_model = null;
+        $this->brand = null;
         $this->product = null;
+        $this->android_version = null;
+        $this->build = null;
+        $this->total_mem_size = null;
+        $this->available_mem_size = null;
+        $this->build_config = null;
+        $this->custom_data = null;
+        $this->is_silent = null;
+        $this->stack_trace = null;
+        $this->initial_configuration = null;
+        $this->crash_configuration = null;
+        $this->display = null;
+        $this->user_comment = null;
+        $this->user_email = null;
+        $this->user_app_start_date = null;
+        $this->user_crash_date = null;
+        $this->dumpsys_meminfo = null;
+        $this->logcat = null;
+        $this->device_features = null;
+        $this->environment = null;
+        $this->shared_preferences = null;
+        $this->date_received = null;
+        $this->application_log = null;
+        $this->device_id = null;
+        $this->dropbox = null;
+        $this->eventslog = null;
+        $this->media_codec_list = null;
         $this->radiolog = null;
-        $this->report_id = null;
         $this->settings_global = null;
         $this->settings_secure = null;
         $this->settings_system = null;
-        $this->shared_preferences = null;
-        $this->stack_trace = null;
         $this->stack_trace_hash = null;
         $this->thread_details = null;
-        $this->total_mem_size = null;
-        $this->user_app_start_date = null;
-        $this->user_comment = null;
-        $this->user_crash_date = null;
-        $this->user_email = null;
         $this->alreadyInSave = false;
         $this->clearAllReferences();
         $this->resetModified();

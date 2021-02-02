@@ -15,6 +15,11 @@ require_once 'route-handlers/plain_get.php';
 require_once 'route-handlers/reports_by_device_and_day.php';
 require_once 'route-handlers/show_report.php';
 require_once 'route-handlers/reports_by_device.php';
+require_once 'route-handlers/set_filter.php';
+
+//Constants:
+define("FILTER", "filter");
+define("REMOVE_FILTERING", "remove-filtering");
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;

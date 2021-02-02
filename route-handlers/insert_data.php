@@ -1,14 +1,22 @@
 <?php
 
 function insert_data() {
+	global $allowedPackages;
+	
 	$report = new Report();
 	$request = Flight::request();
 	$post_data = $request->data->getData();
 
+	//There always has to be an installation id. Otherwise we cannot process the data.
 	if(array_key_exists("INSTALLATION_ID", $post_data)) 
 		$report->setInstallationId($post_data["INSTALLATION_ID"]);
 	else 
 		return ;
+
+	if(array_key_exists("PACKAGE_NAME", $post_data) && 
+			!in_array($post_data["PACKAGE_NAME"], $allowedPackages)) {
+		die("Unknown package.");
+	}
 			
 	if(array_key_exists("ANDROID_VERSION", $post_data))
 		$report->setAndroidVersion($post_data["ANDROID_VERSION"]);

@@ -2,6 +2,7 @@
 <?php
 	/**
 	* This template receives from controller the following variables:
+	*	- $packagesInfo: an array containing the number of reports for each package indexed with the package name.
 	* 	- $days: An array of Day objects to be displayed
 	*	- $page: the number of the current page
 	*	- $num_pages: the total number of pages
@@ -12,8 +13,41 @@
 	<title>ACRAB main screen</title>
 	<link rel="stylesheet" type="text/css" href="css/main-view.css">
 </head>
-
+	
 <body>
+	<div id="filtering">
+		<p id="filter-status">
+			<?php if(isset($_SESSION[FILTER])): ?>
+				Reports are filtered by <?php echo $_SESSION[FILTER] ?>
+			<?php else:?>
+					Reports are unfiltered.
+			<?php endif ?>
+		</p>
+		<p id="select-filter">
+			<form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/setfilter" ?>" method="POST">
+				
+				<?php if(count($packagesInfo) < 2 )
+						  $disabled = true;
+						  	else
+						  $disabled = false
+				?>
+
+				<label for="<?php echo FILTER?>">Filter by:</label>
+
+				<select name="<?php echo FILTER?>" <?php if($disabled) echo 'disabled="disabled"'?> >
+					<?php foreach($packagesInfo as $package => $count) :?>
+						<option value="<?php echo $package?>"><?php echo $package . "(" . $count . ")" ?></option>
+					<?php endforeach ?>
+					
+					<?php if(isset($_SESSION[FILTER])) : ?>
+						<option value="<?php echo REMOVE_FILTERING ?>">Unfiltered (all)</option>
+					<?php endif ?>
+				</select>
+				<br/>
+				<input type="submit" value="Filter" <?php if($disabled) echo 'disabled="disabled"'?> />
+		</p>
+	</div>
+	
 	<h1>Crashes by date</h1>
 
 	<?php foreach ($days as $day) : ?>
@@ -33,53 +67,15 @@
 	<?php endforeach ?>
 
 <div id="footer">
-	<?php
-		define('ADITIONAL_PAGES', 2);  //The number of aditional pages to include above and below the current page.
-		$pages_to_display = array(); 
-		for($i = $page - ADITIONAL_PAGES; $i <= $page + ADITIONAL_PAGES; ++$i)
-			if($i >= 1 && $i <= $num_pages)
-				$pages_to_display[] = $i;
-	?>
-
-<?php if($page > 1): ?>
-	<a href="<?php
-			$previous = $page - 1;
-			if($previous == 1) 
-				echo '/';
-			else
-				echo '/page=' . $previous;
-		?>">Previous</a>
-<?php endif ?>
-
-	<?php if($pages_to_display[0] > 1): ?>
-		<a href="/" <?php if($page == 1) echo 'class="current-page"'?>>1</a>
+	<?php if($newerThan != null) : ?>
+		<a href="/">Home</a>
+		<a href="/newerThan=<?php echo $newerThan?>&olderThan=null">Previous</a>
 	<?php endif ?>
 
-	<?php if($pages_to_display[0] > 2):?>
-		...
+	<?php if($olderThan != null) : ?>
+		<a href="/newerThan=null&olderThan=<?php echo $olderThan ?>">Next</a>
 	<?php endif ?>
 
-	<?php foreach($pages_to_display as $current_page): ?>
-		<a href="
-		<?php if($current_page == 1) 
-				echo '/';
-			else
-				echo '/page=' . $current_page;
-		?>" <?php if($page == $current_page) echo 'class="current-page"'?>><?php echo $current_page?></a>
-	<?php endforeach ?>
-
-	<?php if(end($pages_to_display) < $num_pages - 1): ?>
-		...
-	<?php endif ?>
-
-	<?php if(end($pages_to_display) < $num_pages): ?>
-		<a href="/page=<?php echo $num_pages ?>" <?php if($page == $num_pages) echo 'class="current-page"'?>><?php echo $num_pages ?></a>
-	<?php endif ?>
-
-	<?php if($page < $num_pages): ?>
-		<a href="/page=<?php echo $page + 1 ?>">Next</a>
-	<?php endif ?>
-</div>
 </div>
 
 </body>
